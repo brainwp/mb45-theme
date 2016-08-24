@@ -1,1 +1,41 @@
 //FOOTER CSS
+.footerMenuTitle {
+	text-transform:uppercase;
+	font-weight: bold;
+}
+footer#footer {
+	background: #000;
+	color: white;
+	font-family: $familia-padrao;
+	padding-bottom: 15px;
+
+}
+.footerMenu {
+	text-transform: uppercase;
+}
+footer{
+	height: auto!important;
+}
+.footerMenu a{
+	text-decoration: underline;
+	color: white;
+}
+.footerMenu ul {
+	list-style: none;
+	margin-left: 0px;
+    padding-left: 0px;
+
+}
+.footerMenu ul li {
+	padding-top: 13px;
+}
+.footerMenu {
+	text-align:left;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 1.15em;
+}
+
+#footer .container-fluid .col-md-12 {
+
+}

@@ -13,9 +13,85 @@
 		</div><!-- .row -->
 	</div><!-- #wrapper -->
 
-	<footer id="footer" role="contentinfo">
-		<div class="container">
-			<p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> - <?php _e( 'All rights reserved', 'odin' ); ?> | <?php echo sprintf( __( 'Powered by the <a href="%s" rel="nofollow" target="_blank">Odin</a> forces and <a href="%s" rel="nofollow" target="_blank">WordPress</a>.', 'odin' ), 'http://wpod.in/', 'http://wordpress.org/' ); ?></p>
+	<footer id="footer" role="contentinfo" class="fp-auto-height">
+		<div class="container-fluid">
+			<div class="col-md-12">
+
+				<div class="footerMenu col-md-3">
+					<span class="footerMenuTitle">
+						OUR COMPANY
+					</span>
+					<ul>
+						<a href="#">
+							<li>ABOUT</li>
+						</a>
+						<a href="#">
+							<li>FAQS</li>
+						</a>
+						<a href="#">
+							<li>NEED TO CANCEL?</li>
+						</a>
+					</ul>
+				</div>
+
+				<div class="footerMenu col-md-3">
+					<span class="footerMenuTitle">
+						FOLLOW US
+					</span>
+					<ul>
+						<a href="#">
+							<li>FAQS</li>
+						</a>
+						<a href="#">
+							<li>NEED TO CANCEL?</li>
+						</a>
+						<a href="#">
+							<li>ABOUT</li>
+						</a>
+						<a href="#">
+							<li>ABOUT</li>
+						</a>
+
+					</ul>
+				</div>
+
+				<div class="footerMenu col-md-3">
+					<span class="footerMenuTitle">
+						OUR COMPANY
+					</span>
+					<ul>
+						<a href="#">
+							<li>ABOUT</li>
+						</a>
+						<a href="#">
+							<li>FAQS</li>
+						</a>
+						<a href="#">
+							<li>NEED TO CANCEL?</li>
+						</a>
+					</ul>
+				</div>
+
+				<div class="footerMenu col-md-3">
+					<span class="footerMenuTitle">
+						OUR COMPANY
+					</span>
+					<ul>
+						<a href="#">
+							<li>ABOUT</li>
+						</a>
+						<a href="#">
+							<li>FAQS</li>
+						</a>
+						<a href="#">
+							<li>NEED TO CANCEL?</li>
+						</a>
+					</ul>
+				</div>
+
+
+			</div>
+
 		</div><!-- .container -->
 	</footer><!-- #footer -->
 
