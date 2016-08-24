@@ -76,8 +76,78 @@
 
 }
 // FIM SLID
-
+.form {
+	float: right;
+}
 
 #footer{
-	display: none;
+}
+input[type="text"] {
+	float: none;
+	display: block;
+	background: none;
+    border: none;
+    border-bottom: 0.1px solid white;
+    color: white;
+    width: 100%;
+}
+label{
+	width: 98%;
+    margin-bottom: 20px;
+}
+form {
+	color: white;
+}
+input[type="email"]:focus {
+    outline: none;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+input[type="email"] {
+	float: none;
+	display: block;
+	background: none;
+    border: none;
+    border-bottom: 0.1px solid white;
+    color: white;
+    width: 100%;
+}
+input[type="submit"] {
+    background: none;
+    border-radius: 0px;
+    padding: 12px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Gotham;
+    margin-top: 15px;
+    width: 100%;
+    transition:all 250ms ease-in-out;
+}
+form {
+	font-family: Gotham;
+	font-size: 0.9em;
+    letter-spacing: 2px;
+}
+form .col-md-6{
+	margin-left: 0px;
+	margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.form form{
+	background-color:rgba(0,0,0,0.58);
+	padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+form .col-md-12{
+	margin: 0;
+	padding: 0;
+}
+input[type="submit"]:hover {
+    background: white;
+    color: #2d2d2d;
+    transition:all 250ms ease-in-out;
 }

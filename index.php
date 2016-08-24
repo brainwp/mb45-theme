@@ -57,20 +57,47 @@ Mani + Blowout = $65
 	</div>
 
 
-	<div class="section three">
+	<div class="section">
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
-					mb45 <br>signature
+					Want a more modern, beautiful & efficient life?
 				</div>
 				<div class="info col-md-8">
-					Chic Hair + Chic Nails in 45 Minutes
-Mani + Blowout = $65
+					Sign up for our emails to stay in-the-know on exclusive events, tips and offers. We promise we won’t spam you.
 				</div>
-				<a href="#" class="theButtom">
-					buy it now
-				</a>
+
 			</div>
+
+	<!-- FORMULARIO -->
+			<div class="col-md-4 form col-md-pull-1">
+				<form action="" id="" class="">
+					<div class="col-md-6">
+						<label>
+							FIRST NAME
+							<input type="text" name="">
+						</label>
+
+					</div>
+					<div class="col-md-6">
+						<label>
+							LAST NAME
+							<input type="text" name="">
+						</label>
+					</div>
+					<div class="">
+						<label>
+							EMAIL
+							<input type="email" name="">
+						</label>
+					</div>
+					<div class="buttom">
+						<input type="submit" name="" value="JOIN">
+					</div>
+				</form>
+
+			</div>
+
 		</div>
 	</div>
 
@@ -78,7 +105,6 @@ Mani + Blowout = $65
 
 
 </div>
-
 
 
 <?php
