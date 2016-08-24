@@ -5,6 +5,17 @@
     src: url(../fonts/Times-Italic.ttf);
 }
 
+
+// REMOVER APOS DA COLOCAÇÃO DO LOOOP
+.two {
+	background: url(../images/2.png)!important;
+	background-size: cover!important;
+}
+.three {
+	background: url(../images/3.png);
+	background-size: cover;
+}
+
 // SLIDER FRONT-END
 .theTitle{
 	text-transform: uppercase;
@@ -50,14 +61,7 @@
 	background: url(../images/1.png);
 	background-size: cover;
 }
-.two {
-	background: url(../images/2.png);
-	background-size: cover;
-}
-.three {
-	background: url(../images/3.png);
-	background-size: cover;
-}
+
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
 	background: #515151!important;
 	width: 7px!important;
