@@ -227,7 +227,6 @@ function odin_enqueue_scripts() {
 
 	//Slider
 	wp_enqueue_style( 'fullpage', $template_url . '/assets/css/jquery.fullpage.min.css', array(), null, 'all' );
-	wp_enqueue_script( 'fullpage', $template_url . '/assets/js/jquery.fullpage.min.js', array(), null, true );
 
 	// Html5Shiv
 	wp_enqueue_script( 'html5shiv', $template_url . '/assets/js/html5.js' );
