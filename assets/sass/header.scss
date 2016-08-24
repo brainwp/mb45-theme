@@ -1,0 +1,81 @@
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/Gotham-Book.otf);
+}
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: bold;
+    src: url(../fonts/Gotham-Bold.otf);
+}
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: lighter;
+    src: url(../fonts/Gotham-Light.otf);
+}
+
+@font-face {
+    font-family: Gotham;
+    font-style: normal;
+    font-weight: 900;
+    src: url(../fonts/Gotham-Ultra.otf);
+}
+
+#header{
+	transition: all 150ms ease-in-out;
+}
+
+.header-active{
+	background-color: #050505;
+	transition: all 150ms ease-in-out;
+}
+.page-header{
+	border:none!important;
+}
+.logo{
+	max-width: 120px;
+}
+
+.navbar-main-navigation{
+	float: right;
+}
+.navbar-nav{
+	font-family: $familia-padrao;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.94em;
+}
+
+.navbar-nav a{
+	color: $cor-links;
+	transition:all 150ms ease-in-out;
+}
+.navbar-nav a:hover{
+	color: $cor-links-hover;
+}
+.nav>li>a:hover, .nav>li>a:focus{
+	background: none;
+}
+
+.header{
+	padding-top: 5px;
+}
+.page-header a{
+    display: inline-block;
+    margin-top: 6px;
+}
+.navbar-nav>li{
+	padding-left: 11em;
+}
+#header{
+	position:fixed;
+	top:0;
+	left:0;
+	z-index: 70;
+	width: 100%;
+	padding: 0;
+	margin:0;
+}

@@ -1,0 +1,83 @@
+@font-face {
+    font-family: Times Italic;
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/Times-Italic.ttf);
+}
+
+// SLIDER FRONT-END
+.theTitle{
+	text-transform: uppercase;
+	font-family: $familia-padrao;
+	font-size: 2.3em;
+	letter-spacing: 6px;
+	color: white;
+	font-weight: bold;
+}
+.info{
+	font-family: Times Italic;
+    color: white;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float: none;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.theButtom, .theButtom:hover{
+	text-transform: uppercase;
+    font-family: "Gotham",sans-serif;
+    font-size: 15px;
+    color: white;
+    padding: 13px;
+    border: 0.1px solid white;
+    width: inherit;
+    text-align: center;
+    display: block;
+    margin-top: 25px;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition:all 100ms ease-in-out;
+
+}
+.theButtom:hover{
+	background-color: white;
+	color: #2d2d2d;
+	transition:all 100ms ease-in-out;
+}
+.section {
+	background: url(../images/1.png);
+	background-size: cover;
+}
+.two {
+	background: url(../images/2.png);
+	background-size: cover;
+}
+.three {
+	background: url(../images/3.png);
+	background-size: cover;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+	background: #515151!important;
+	width: 7px!important;
+	height: 7px!important;
+	transition: all 150ms ease-in-out;
+
+}
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span{
+	width: 7px!important;
+	height: 7px!important;
+	margin: -6px 0 0 -2px!important;
+	transition: all 150ms ease-in-out;
+	background: #CDCDCD!important;
+}
+.theButtom{
+
+}
+// FIM SLID
+
+
+#footer{
+	display: none;
+}

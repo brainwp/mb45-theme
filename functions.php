@@ -225,9 +225,14 @@ function odin_enqueue_scripts() {
 	// jQuery.
 	wp_enqueue_script( 'jquery' );
 
+	//Slider
+	wp_enqueue_style( 'fullpage', $template_url . '/assets/css/jquery.fullpage.min.css', array(), null, 'all' );
+	wp_enqueue_script( 'fullpage', $template_url . '/assets/js/jquery.fullpage.min.js', array(), null, true );
+
 	// Html5Shiv
 	wp_enqueue_script( 'html5shiv', $template_url . '/assets/js/html5.js' );
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
 
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
