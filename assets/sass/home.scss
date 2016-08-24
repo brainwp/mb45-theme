@@ -11,12 +11,12 @@
 	font-family: $familia-padrao;
 	font-size: 2.3em;
 	letter-spacing: 6px;
-	color: white;
+	color: $cor-txt-post;
 	font-weight: bold;
 }
 .info{
 	font-family: Times Italic;
-    color: white;
+    color: $cor-txt-post;
     font-size: 20px;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -28,9 +28,9 @@
 	text-transform: uppercase;
     font-family: "Gotham",sans-serif;
     font-size: 15px;
-    color: white;
+    color: $cor-txt-post;
     padding: 13px;
-    border: 0.1px solid white;
+    border: 0.1px solid $cor-txt-post;
     width: inherit;
     text-align: center;
     display: block;
@@ -42,8 +42,8 @@
 
 }
 .theButtom:hover{
-	background-color: white;
-	color: #2d2d2d;
+	background-color: $cor-txt-post;
+	color: $cor-btt-hover-txt;
 	transition:all 100ms ease-in-out;
 }
 .section {

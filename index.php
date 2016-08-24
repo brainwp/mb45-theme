@@ -56,7 +56,29 @@ Mani + Blowout = $65
 		</div>
 	</div>
 
+
+	<div class="section three">
+		<div class="container-fluid">
+			<div class="col-md-offset-1 col-md-5">
+				<div class="theTitle">
+					mb45 <br>signature
+				</div>
+				<div class="info col-md-8">
+					Chic Hair + Chic Nails in 45 Minutes
+Mani + Blowout = $65
+				</div>
+				<a href="#" class="theButtom">
+					buy it now
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+
+
 </div>
+
 
 
 <?php

@@ -232,7 +232,6 @@ function odin_enqueue_scripts() {
 	// Html5Shiv
 	wp_enqueue_script( 'html5shiv', $template_url . '/assets/js/html5.js' );
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
-	wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
 
 	// General scripts.
 	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
