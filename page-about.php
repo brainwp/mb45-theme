@@ -54,7 +54,7 @@ get_header(); ?>
 					</span>
 				</div>
 				<div class="pageContent">
-					<?php the_content(); ?>
+					<?php the_content();?>
 				</div>
 			</div>
 				<?php
