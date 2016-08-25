@@ -7,6 +7,15 @@ jQuery(document).ready(function($) {
 		scrollBar: true,
 		autoScrolling: true,
 	});
+
+	$('#fullpage-nails').fullpage({
+		menu: '#header',
+		navigation: true,
+		navigationPosition: 'left',
+		scrollBar: true,
+		autoScrolling: true,
+	});
+
 	$height = $(window).height();
 	$(window).on("scroll", function(e){
 		if($(window).scrollTop() > $height) {
