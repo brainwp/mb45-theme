@@ -22,15 +22,16 @@
 						OUR COMPANY
 					</span>
 					<ul>
-						<a href="#">
-							<li>ABOUT</li>
-						</a>
-						<a href="#">
-							<li>FAQS</li>
-						</a>
-						<a href="#">
-							<li>NEED TO CANCEL?</li>
-						</a>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
 					</ul>
 				</div>
 
@@ -39,18 +40,15 @@
 						FOLLOW US
 					</span>
 					<ul>
-						<a href="#">
-							<li>FAQS</li>
-						</a>
-						<a href="#">
-							<li>NEED TO CANCEL?</li>
-						</a>
-						<a href="#">
-							<li>ABOUT</li>
-						</a>
-						<a href="#">
-							<li>ABOUT</li>
-						</a>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
 
 					</ul>
 				</div>
@@ -60,15 +58,15 @@
 						OUR COMPANY
 					</span>
 					<ul>
-						<a href="#">
-							<li>ABOUT</li>
-						</a>
-						<a href="#">
-							<li>FAQS</li>
-						</a>
-						<a href="#">
-							<li>NEED TO CANCEL?</li>
-						</a>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
 					</ul>
 				</div>
 
@@ -77,15 +75,15 @@
 						OUR COMPANY
 					</span>
 					<ul>
-						<a href="#">
-							<li>ABOUT</li>
-						</a>
-						<a href="#">
-							<li>FAQS</li>
-						</a>
-						<a href="#">
-							<li>NEED TO CANCEL?</li>
-						</a>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
+						<li>
+							<a href="#">ABOUT</a>
+						</li>
 					</ul>
 				</div>
 

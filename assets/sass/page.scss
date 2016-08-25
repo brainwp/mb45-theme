@@ -1,0 +1,81 @@
+.page{
+	background-color: #000;
+	#header{
+		background: #000;
+	}
+	.entry-header{
+		text-align: center;
+	}
+	main#content {
+		padding-top: 100px;
+	}
+	h1{
+		font-size: 3.5em;
+    	font-weight: bold;
+    	color: white;
+    	font-family: $familia-padrao;
+	}
+	.page{
+		display: flex;
+    	flex-flow: column;
+    	justify-content: center;
+    	align-items: center;
+	}
+
+	.line {
+	    color: white;
+	    font-family: Times Italic;
+	    font-size: 1.5em;
+	    border: 2px solid;
+	    padding-left: 80px;
+	    text-align: center;
+	    line-height: 38px;
+	    padding-right: 80px;
+	    padding-top: 40px;
+	    letter-spacing: normal;
+	    margin-top: 50px;
+	    margin-bottom: 50px;
+	    padding-bottom: 40px;
+	    float: none;
+	}
+	.box{
+		background-color: #D8D8D8;
+		display: flex;
+    	justify-content: center;
+    	padding-top: 50px;
+    	padding-bottom: 290px;
+	}
+	img.personImg {
+    	max-width: 105px;
+	}
+	.imageLimiter{
+		display: inline-block;
+		float: left;
+	}
+	.nameB{
+		font-family: $familia-padrao;
+		text-transform: uppercase;
+    	font-weight: bold;
+    	font-size: 1.2em;
+	}
+	span.nameBout {
+    	padding-left: 21px;
+    	padding-top: 27px;
+    	padding-right: 0px;
+	}
+	.bout {
+    	font-family: Times Italic;
+    	font-size: 1.3em;
+    	font-weight: bold;
+	}
+	.subBox {
+    	display: flex;
+    	flex-flow: column;
+	}
+	.pageContent {
+	    font-family: Times Italic;
+	    font-size: 1.37em;
+	    margin-top: 20px;
+	    line-height: 31px;
+	}
+}

@@ -11,10 +11,9 @@
  */
 
 get_header(); ?>
-
-	<main id="content" class="<?php echo odin_classes_page_full(); ?>" tabindex="-1" role="main">
-
-			<?php
+	<!-- <?php echo odin_classes_page_full(); ?> -->
+	<main id="content" class="" tabindex="-1" role="main">
+	<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post();
 
@@ -27,7 +26,6 @@ get_header(); ?>
 					endif;
 				endwhile;
 			?>
-
 	</main><!-- #main -->
 
 <?php
