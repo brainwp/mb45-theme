@@ -63,7 +63,7 @@ Mani + Blowout = $65
 	</div>
 
 
-	<div class="section">
+	<div class="section form">
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
@@ -76,7 +76,7 @@ Mani + Blowout = $65
 			</div>
 
 	<!-- FORMULARIO -->
-			<div class="col-md-4 form col-md-pull-1">
+			<div class="col-md-4 form col-md-pull-1 col-xs-12 col-sm-12">
 				<form action="" id="" class="">
 					<div class="col-md-6">
 						<label>

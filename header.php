@@ -66,7 +66,7 @@
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
 					<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
 						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
+						<span class="icon-bar closeIcon"></span>
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand visible-xs-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">

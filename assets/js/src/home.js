@@ -2,8 +2,8 @@ jQuery(document).ready(function($) {
 	//FRONT-END
 	$('.navbar-toggle').on("click", function(g){
 		$('.header').toggleClass('backgroundMenu', 1000);
+		$('.navbar-toggle').toggleClass('activeButtom', 1000);
 	});
-
 	$('#fullpage').fullpage({
 		menu: '#header',
 		navigation: true,
@@ -29,7 +29,6 @@ jQuery(document).ready(function($) {
 		};
 	});
 
-
 	$width = $(window).width();
 	$mobileHeight = $(window).height();
 	if($width <= 991) {
@@ -37,6 +36,7 @@ jQuery(document).ready(function($) {
 			height: "$mobileHeight"
 		});
 	}
+
 
 
 

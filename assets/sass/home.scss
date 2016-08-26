@@ -175,10 +175,18 @@ input[type="submit"]:hover {
 	color: white;
 	background: rgba(100,100,100,0.5);
 }
+.section.form {
+    margin-bottom:0;
+}
+
 @media all and (max-width: 992px) {
 	.theTitle{
 		padding-right: 80px;
 		font-size:3.0em;
+	}
+	.theButtomM{
+			position: absolute;
+    		bottom: 0px;
 	}
 
 }
@@ -192,6 +200,10 @@ input[type="submit"]:hover {
 		.theButtom {
 			display: none;
 		}
+
+	}
+	.section.form {
+    	margin-bottom: 590px;
 	}
 
 	#fp-nav{
