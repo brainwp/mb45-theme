@@ -28,9 +28,9 @@ if(function_exists("register_field_group"))
 		'location' => array (
 			array (
 				array (
-					'param' => 'page_parent',
+					'param' => 'page_type',
 					'operator' => '==',
-					'value' => '17',
+					'value' => 'child',
 					'order_no' => 0,
 					'group_no' => 0,
 				),
