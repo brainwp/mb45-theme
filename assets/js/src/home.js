@@ -1,5 +1,9 @@
 jQuery(document).ready(function($) {
 	//FRONT-END
+	$('.navbar-toggle').on("click", function(g){
+		$('.header').toggleClass('backgroundMenu', 1000);
+		$('.navbar-toggle').toggleClass('activeButtom', 1000);
+	});
 	$('#fullpage').fullpage({
 		menu: '#header',
 		navigation: true,
@@ -16,7 +20,7 @@ jQuery(document).ready(function($) {
 		autoScrolling: true,
 	});
 
-	$height = $(window).height();
+	$height = $(window).height() - 100;
 	$(window).on("scroll", function(e){
 		if($(window).scrollTop() > $height) {
 			$('header').addClass('header-active',150);
@@ -24,6 +28,16 @@ jQuery(document).ready(function($) {
 			$('header').removeClass('header-active',150);
 		};
 	});
+
+	$width = $(window).width();
+	$mobileHeight = $(window).height();
+	if($width <= 991) {
+		$('.in').css({
+			height: "$mobileHeight"
+		});
+	}
+
+
 
 
 });

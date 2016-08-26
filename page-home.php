@@ -9,43 +9,50 @@
  */
 
 get_header(); ?>
+
 <div id="fullpage">
 
 	<div class="section">
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
-					manicure + blowout 45 minutes
+					manicure + blowout 45 minutes
 				</div>
-				<div class="info col-md-8">
+				<div class="info col-md-8 hidden-xs">
 					Chic Hair + Chic Nails in 45 Minutes
-					Mani + Blowout = $65
+Mani + Blowout = $65
 				</div>
 				<a href="#" class="theButtom">
 					view menu
 				</a>
 			</div>
 		</div>
+		<a href="#" class="theButtomM hidden-lg-down">
+					view menus
+		</a>
 	</div>
 	<div class="section two">
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
-					mb45 <br>signature
+					manicure + blowout 45 minutes
 				</div>
-				<div class="info col-md-8">
+				<div class="info col-md-8 hidden-xs">
 					Chic Hair + Chic Nails in 45 Minutes
-					Mani + Blowout = $65
+Mani + Blowout = $65
 				</div>
 				<a href="#" class="theButtom">
-					buy it now
+					view menu
 				</a>
 			</div>
 		</div>
+		<a href="#" class="theButtomM hidden-lg-down">
+					view menus
+		</a>
 	</div>
 
 
-	<div class="section">
+	<div class="section form">
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
@@ -58,7 +65,7 @@ get_header(); ?>
 			</div>
 
 	<!-- FORMULARIO -->
-			<div class="col-md-4 form col-md-pull-1">
+			<div class="col-md-4 form col-md-pull-1 col-xs-12 col-sm-12">
 				<form action="" id="" class="">
 					<div class="col-md-6">
 						<label>
@@ -85,6 +92,7 @@ get_header(); ?>
 				</form>
 
 			</div>
+
 		</div>
 	</div>
 

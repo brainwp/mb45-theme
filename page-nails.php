@@ -15,7 +15,7 @@ get_header(); ?>
 				<div class="theTitle">
 					manicure + blowout 45 minutes
 				</div>
-				<div class="info col-md-8">
+				<div class="info col-md-8 hidden-xs">
 					Chic Hair + Chic Nails in 45 Minutes
 Mani + Blowout = $65
 				</div>
@@ -24,28 +24,29 @@ Mani + Blowout = $65
 				</a>
 			</div>
 		</div>
+		<a href="#" class="theButtomM hidden-lg-down">
+					view menus
+		</a>
 	</div>
 	<div class="section two">
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
-					mb45 <br>signature
+					manicure + blowout 45 minutes
 				</div>
-				<div class="info col-md-8">
+				<div class="info col-md-8 hidden-xs">
 					Chic Hair + Chic Nails in 45 Minutes
 Mani + Blowout = $65
 				</div>
 				<a href="#" class="theButtom">
-					buy it now
+					view menu
 				</a>
 			</div>
 		</div>
+		<a href="#" class="theButtomM hidden-lg-down">
+					view menus
+		</a>
 	</div>
-
-
-
-
-
 
 
 </div>

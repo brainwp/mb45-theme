@@ -1,6 +1,6 @@
 .page{
 	background-color: #000;
-
+	margin: 0px;
 	.entry-header{
 		text-align: center;
 	}
@@ -77,5 +77,41 @@
 	    font-size: 1.37em;
 	    margin-top: 20px;
 	    line-height: 31px;
+	}
+
+	@media all and (max-width: 768px){
+		.page{
+
+		}
+		.subBox{
+			margin-bottom: 40px;
+		}
+		.box{
+			display:block;
+		}
+
+		.imageLimiter{
+			display: block;
+			float: none;
+		}
+		span.nameBout {
+    		padding: 0px;
+    		margin-top: 20px;
+    		display: block;
+		}
+		.nameB{
+			display: block;
+		}
+		.bout{
+			margin-top: 5px;
+    		display: block;
+		}
+
+		#footer{
+			position: initial;
+		}
+		main#content{
+			padding-bottom: 0px;
+		}
 	}
 }

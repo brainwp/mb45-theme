@@ -29,7 +29,7 @@
 
 	<header id="header" role="banner">
 		<div class="container-fluid header">
-			<div class="page-header hidden-xs col-md-2">
+			<div class="page-header hidden-xs col-md-2 col-sm-2">
 
 				<?php odin_the_custom_logo(); ?>
 
@@ -61,19 +61,24 @@
 				<?php endif; ?>
 			</div><!-- .site-header-->
 
-			<div id="main-navigation" class="navbar col-md-10">
+			<div id="main-navigation" class="navbar col-md-10 col-sm-10">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-navigation">
 					<span class="sr-only"><?php _e( 'Toggle navigation', 'odin' ); ?></span>
 						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
+						<span class="icon-bar closeIcon"></span>
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand visible-xs-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
+						<?php
+							$header_image = get_header_image();
+							if ( ! empty( $header_image ) ) :
+						?>
+								<img src="<?php echo esc_url( $header_image ); ?>" height="<?php esc_attr_e( $header_image->height ); ?>" width="<?php esc_attr_e( $header_image->width ); ?>" alt="" class="img-responsive logo"/>
+						<?php endif; ?>
 					</a>
 				</div>
-				<nav class="collapse navbar-collapse navbar-main-navigation col-md-7" role="navigation">
+				<nav class="collapse navbar-collapse navbar-main-navigation col-md-12 no-transition" role="navigation">
 					<?php
 						wp_nav_menu(
 							array(
