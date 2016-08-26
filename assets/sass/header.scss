@@ -79,3 +79,76 @@
 	padding: 0;
 	margin:0;
 }
+
+@media all and (max-width: 992px) {
+	.logo{
+    	max-width: 100px;
+	}
+	.navbar-nav>li {
+    	padding-left: 2em!important;
+
+	}
+
+	.navbar-toggle .icon-bar {
+    	background: white;
+	}
+
+	.btn-default:hover, input[type="submit"]:hover, input[type="reset"]:hover, button:hover, .btn-default:focus, input[type="submit"]:focus, input[type="reset"]:focus, button:focus{
+    	color: #333;
+    	background: none;
+    	border: none;
+	}
+	.btn-default:active, input[type="submit"]:active, input[type="reset"]:active, button:active{
+    	background: none;
+    	border: none;
+	}
+	button:active:focus{
+		background: none;
+		border: none;
+	}
+	nav.navbar-collapse.navbar-main-navigation.col-md-12.collapse.in{
+		width: 100%;
+    	text-align: right;
+    	margin-top: 22px;
+    	height: 1000px;
+    	box-shadow: none;
+	}
+	.navbar-collapse{
+		width: 100%;
+    	text-align: right;
+    	margin-top: 22px;
+    	height: 1000px;
+		box-shadow: none;
+	}
+	.navbar-main-navigation {
+	    float: right;
+	    text-align: right;
+	    width: 100%;
+	}
+	.backgroundMenu{
+		background: #33135e;
+		transition: all 230ms ease-in;
+	}
+	.navbar-brand{
+		padding: 0px;
+	}
+	.navbar-toggle{
+		margin: 0px;
+	}
+
+	.no-transition {
+  		transition: height 1ms;
+	}
+	.navbar-nav>li {
+    	padding-left: 1em;
+	}
+	nav.collapse.navbar-collapse.navbar-main-navigation.col-md-12.no-transition {
+    	margin-top: -5px;
+	}
+
+}
+@media all and (max-width: 1200px) {
+	.navbar-nav>li {
+    	padding-left: 5em;
+	}
+}
