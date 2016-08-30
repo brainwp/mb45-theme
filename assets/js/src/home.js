@@ -23,9 +23,9 @@ jQuery(document).ready(function($) {
 	$height = $(window).height() - 100;
 	$(window).on("scroll", function(e){
 		if($(window).scrollTop() > $height) {
-			$('header').addClass('header-active',150);
+			$('#header').addClass('header-active',150);
 		}else{
-			$('header').removeClass('header-active',150);
+			$('#header').removeClass('header-active',150);
 		};
 	});
 
