@@ -25,12 +25,12 @@
 }
 
 #header{
-	transition: all 150ms ease-in-out;
+	transition: $default-animation;
 }
 
 .header-active{
 	background-color: #050505;
-	transition: all 150ms ease-in-out;
+	transition: $default-animation;
 }
 .page-header{
 	border:none!important;
@@ -46,12 +46,12 @@
 	font-family: $familia-padrao;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 0.94em;
+    font-size: $font-size-menu;
 }
 
 .navbar-nav a{
 	color: $cor-links;
-	transition:all 150ms ease-in-out;
+	transition:$default-animation;
 }
 .navbar-nav a:hover{
 	color: $cor-links-hover;
@@ -84,7 +84,7 @@
     display: inline-block;
     position: relative;
     bottom: 5px;
-    transition: all 250ms ease-in;
+    transition: $default-animation;
 }
 .activeButtom span:nth-child(2) {
     transform: rotate(-45deg);
@@ -92,13 +92,13 @@
     position: relative;
     bottom: 5px;
     right: -26px;
-    transition: all 250ms ease-in;
+    transition: $default-animation;
 }
 .activeButtom .closeIcon{
 	display: none!important;
 }
 button.navbar-toggle {
-    transition: all 250ms ease-in;
+    transition: $default-animation;
 }
 @media all and (max-width: 992px) {
 	.logo{
@@ -147,7 +147,7 @@ button.navbar-toggle {
 	}
 	.backgroundMenu{
 		background: #33135e;
-		transition: all 230ms ease-in;
+		transition: $default-animation;
 	}
 	.navbar-brand{
 		padding: 0px;

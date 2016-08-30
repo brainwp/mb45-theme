@@ -22,13 +22,13 @@
 .theTitle{
 	text-transform: uppercase;
 	font-family: $familia-padrao;
-	font-size: 2.3em;
+	font-size: $font-size-title;
 	letter-spacing: 6px;
 	color: $cor-txt-post;
 	font-weight: bold;
 }
 .info{
-	font-family: Times Italic;
+	font-family: $familia-secundaria;
     color: $cor-txt-post;
     font-size: 20px;
     margin-top: 15px;
@@ -51,13 +51,13 @@
     font-weight: lighter;
     letter-spacing: 1px;
     text-decoration: none;
-    transition:all 100ms ease-in-out;
+    transition:$default-animation;
 
 }
 .theButtom:hover{
 	background-color: $cor-txt-post;
 	color: $cor-btt-hover-txt;
-	transition:all 100ms ease-in-out;
+	transition:$default-animation;
 }
 .section {
 	background: url(../images/1.png);
@@ -69,14 +69,14 @@
 	background: #515151!important;
 	width: 7px!important;
 	height: 7px!important;
-	transition: all 150ms ease-in-out;
+	transition: $default-animation;
 
 }
 #fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span{
 	width: 7px!important;
 	height: 7px!important;
 	margin: -6px 0 0 -2px!important;
-	transition: all 150ms ease-in-out;
+	transition: $default-animation;
 	background: #CDCDCD!important;
 }
 .theButtom{
@@ -126,13 +126,13 @@ input[type="submit"] {
     padding: 12px;
     color: white;
     text-transform: uppercase;
-    font-family: Gotham;
+    font-family: $familia-padrao;
     margin-top: 15px;
     width: 100%;
-    transition:all 250ms ease-in-out;
+    transition:$default-animation;
 }
 form {
-	font-family: Gotham;
+	font-family: $familia-padrao;
 	font-size: 0.9em;
     letter-spacing: 2px;
 }
@@ -156,11 +156,11 @@ form .col-md-12{
 input[type="submit"]:hover {
     background: white;
     color: #2d2d2d;
-    transition:all 250ms ease-in-out;
+    transition:$default-animation;
 }
 .theButtomM, .theButtomM:hover{
 	text-transform: uppercase;
-	font-family: "Gotham",sans-serif;
+	font-family: $familia-padrao;
 	font-size: 15px;
 	color: $cor-txt-post;
 	padding: 30px;
@@ -171,7 +171,7 @@ input[type="submit"]:hover {
 	font-weight: lighter;
 	letter-spacing: 1px;
 	text-decoration: none;
-	transition:all 100ms ease-in-out;
+	transition:$default-animation;
 	color: white;
 	background: rgba(100,100,100,0.5);
 }
