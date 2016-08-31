@@ -19,6 +19,17 @@ jQuery(document).ready(function($) {
 		scrollBar: true,
 		autoScrolling: true,
 	});
+	$('#fullpage-hair').fullpage({
+		menu: '#header',
+		navigation: true,
+		navigationPosition: 'left',
+		scrollBar: true,
+		autoScrolling: true,
+	});
+
+
+	$( '.hair-name' ).center();
+
 
 	$height = $(window).height() - 100;
 	$(window).on("scroll", function(e){

@@ -15,132 +15,34 @@
 
 get_header(); ?>
 
+	<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 
+			<?php
+				if ( have_posts() ) :
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
 
+						/*
+						 * Include the post format-specific template for the content. If you want to
+						 * use this in a child theme, then include a file called called content-___.php
+						 * (where ___ is the post format) and that will be used instead.
+						 */
+						get_template_part( 'content', get_post_format() );
 
+					endwhile;
 
+					// Post navigation.
+					odin_paging_nav();
 
+				else :
+					// If no content, include the "No posts found" template.
+					get_template_part( 'content', 'none' );
 
-<div id="fullpage">
+				endif;
+			?>
 
-	<div class="section">
-		<div class="container-fluid">
-			<div class="col-md-offset-1 col-md-5">
-				<div class="theTitle">
-					manicure + blowout 45 minutes
-				</div>
-				<div class="info col-md-8 hidden-xs">
-					Chic Hair + Chic Nails in 45 Minutes
-Mani + Blowout = $65
-				</div>
-				<a href="#" class="theButtom">
-					view menu
-				</a>
-			</div>
-		</div>
-		<a href="#" class="theButtomM hidden-lg-down">
-					view menus
-		</a>
-	</div>
-	<div class="section two">
-		<div class="container-fluid">
-			<div class="col-md-offset-1 col-md-5">
-				<div class="theTitle">
-					manicure + blowout 45 minutes
-				</div>
-				<div class="info col-md-8 hidden-xs">
-					Chic Hair + Chic Nails in 45 Minutes
-Mani + Blowout = $65
-				</div>
-				<a href="#" class="theButtom">
-					view menu
-				</a>
-			</div>
-		</div>
-		<a href="#" class="theButtomM hidden-lg-down">
-					view menus
-		</a>
-	</div>
-
-
-	<div class="section form">
-		<div class="container-fluid">
-			<div class="col-md-offset-1 col-md-5">
-				<div class="theTitle">
-					Want a more modern, beautiful & efficient life?
-				</div>
-				<div class="info col-md-8">
-					Sign up for our emails to stay in-the-know on exclusive events, tips and offers. We promise we won’t spam you.
-				</div>
-
-			</div>
-
-	<!-- FORMULARIO -->
-			<div class="col-md-4 form col-md-pull-1 col-xs-12 col-sm-12">
-				<form action="" id="" class="">
-					<div class="col-md-6">
-						<label>
-							FIRST NAME
-							<input type="text" name="">
-						</label>
-
-					</div>
-					<div class="col-md-6">
-						<label>
-							LAST NAME
-							<input type="text" name="">
-						</label>
-					</div>
-					<div class="">
-						<label>
-							EMAIL
-							<input type="email" name="">
-						</label>
-					</div>
-					<div class="buttom">
-						<input type="submit" name="" value="JOIN">
-					</div>
-				</form>
-
-			</div>
-
-		</div>
-	</div>
-
-
-
-
-</div>
-
+	</main><!-- #content -->
 
 <?php
+get_sidebar();
 get_footer();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

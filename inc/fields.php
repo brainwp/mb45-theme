@@ -45,4 +45,42 @@ if(function_exists("register_field_group"))
 		'menu_order' => 1,
 	));
 
+
+
+	register_field_group(array (
+		'id' => 'acf_inferior-text',
+		'title' => 'Inferior Text',
+		'fields' => array (
+			array (
+				'key' => 'field_57c5f4c353682',
+				'label' => 'Bottom Text',
+				'name' => 'bottom_text',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => 'Click Here to Purchase a MB45 Gift Card.	For details on our service(...)',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_type',
+					'operator' => '==',
+					'value' => 'child',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
 }
