@@ -1,0 +1,74 @@
+.page-template-page-hair{
+	.image1{
+		background: url(../images/book/1.png);
+		background-size: cover;
+		height: 50vh;
+	}
+	.image2{
+		background: url(../images/book/2.png);
+		background-size: cover;
+		height: 50vh;
+	}
+	.image3{
+		background: url(../images/book/3.png);
+		background-size: cover;
+		height: 50vh;
+	}
+	.image4{
+		background: url(../images/book/4.png);
+		background-size: cover;
+		height: 50vh;
+	}
+	.hair-name{
+		    display: block;
+		    position: absolute;
+		    font-size: 3.3em;
+		    color: white;
+		    z-index: 9;
+		    font-family: $familia-padrao;
+		    font-weight: 600;
+		    background: $cor-preto-puro;
+		    padding: 12px;
+		    padding-left: 50px;
+		    padding-right: 50px;
+	}
+	.hair-nameM{
+		    display: block;
+		    position: absolute;
+		    font-size: 3.3em;
+		    color: white;
+		    z-index: 9;
+		    font-family: $familia-padrao;
+		    font-weight: 600;
+		    background: $cor-preto-puro;
+		    bottom: 0;
+		    text-align: center;
+	}
+	.hair-name span:last-child {
+		    font-family: $familia-secundaria;
+		    font-weight: normal;
+		    font-size: 0.9em;
+	}
+	.hair-nameM span:last-child{
+			font-family: $familia-secundaria;
+		    font-weight: normal;
+		    font-size: 0.9em;
+	}
+
+	@media all and (min-width: 768px) {
+		.hair-nameM{
+			display: none;
+		}
+	}
+
+	@media all and (max-width: 768px) {
+		.container-fluid{
+			.hair-name {
+				display: none;
+			}
+
+		}
+	}
+}
+
+#footer{display: none!Important;}
