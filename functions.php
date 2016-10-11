@@ -332,3 +332,22 @@ require_once get_template_directory() . '/inc/customizer.php';
  */
 require_once get_template_directory() . '/inc/acf/acf.php';
 require_once get_template_directory() . '/inc/fields.php';
+
+
+/**
+ * Remove admin bar on dev & localhost server
+ * @return null
+ */
+function remove_admin_bar_on_dev() {
+	$site_url = home_url();
+	if ( strstr( $site_url, 'dev.' ) ) {
+		show_admin_bar( false );
+		return;
+	}
+	if ( strstr( $site_url, 'localhost' ) ) {
+		show_admin_bar( false );
+		return;
+	}
+
+}
+add_action( 'init', 'remove_admin_bar_on_dev', 9999 );
