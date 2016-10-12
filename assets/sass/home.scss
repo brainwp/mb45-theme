@@ -37,6 +37,7 @@
     margin-left: -15px;
     margin-right: -15px;
 }
+
 .theButtom, .theButtom:hover{
 	text-transform: uppercase;
     font-family: "Gotham",sans-serif;
@@ -60,9 +61,27 @@
 	transition:$default-animation;
 }
 .section {
-	background: url(../images/1.png);
 	background-size: cover;
 	background-position: center;
+}
+
+.section.color-black {
+	.theTitle{
+		color: $cor-preto;
+	}
+	.info{
+		color: $cor-preto;
+	}
+	.theButtom, .theButtom:hover{
+		border: 0.1px solid $cor-preto;
+		color: $cor-preto;
+	}
+	.theButtom:hover{
+		background-color: $cor-preto;
+		color: $cor-txt-post;
+		transition:$default-animation;
+	}
+
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span{

@@ -38,7 +38,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -77,10 +77,100 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
 		'menu_order' => 0,
 	));
+	if ( $frontpage_id = get_option( 'page_on_front' ) ) {
+
+	register_field_group(array (
+		'id' => 'acf_home-options',
+		'title' => 'Home options',
+		'fields' => array (
+			array (
+				'key' => 'field_57fd72abc7a8e',
+				'label' => 'Text color',
+				'name' => 'text_color',
+				'type' => 'radio',
+				'choices' => array (
+					'White' => 'White',
+					'Black' => 'Black',
+				),
+				'other_choice' => 0,
+				'save_other_choice' => 0,
+				'default_value' => 'White',
+				'layout' => 'vertical',
+			),
+			array (
+				'key' => 'field_57fd4bf5d0ff5',
+				'label' => 'Textbox or shortcode on right side',
+				'name' => 'content_right',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_57fd4c43d0ff6',
+				'label' => 'Link text',
+				'name' => 'link_text',
+				'type' => 'text',
+				'default_value' => 'View Menu',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_57fd4c8da0e17',
+				'label' => 'Link URL',
+				'name' => 'link_url',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_parent',
+					'operator' => '==',
+					'value' => $frontpage_id,
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+				0 => 'permalink',
+				1 => 'excerpt',
+				2 => 'custom_fields',
+				3 => 'discussion',
+				4 => 'comments',
+				5 => 'revisions',
+				6 => 'slug',
+				7 => 'author',
+				8 => 'format',
+				9 => 'categories',
+				10 => 'tags',
+				11 => 'send-trackbacks',
+			),
+		),
+		'menu_order' => 0,
+	));
+
+	}
+
 }
