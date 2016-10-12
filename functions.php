@@ -196,6 +196,50 @@ function odin_widgets_init() {
 			'after_title' => '</h3>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 1', 'odin' ),
+			'id' => 'footer-sidebar',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 2', 'odin' ),
+			'id' => 'footer-sidebar-2',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 3', 'odin' ),
+			'id' => 'footer-sidebar-3',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name' => __( 'Footer 4', 'odin' ),
+			'id' => 'footer-sidebar-4',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="footerMenu col-md-3">',
+			'after_widget' => '</div>',
+			'before_title' => '<span class="footerMenuTitle">',
+			'after_title' => '</span>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'odin_widgets_init' );
