@@ -16,7 +16,7 @@ get_header(); ?>
 		<div class="container-fluid">
 			<div class="col-md-offset-1 col-md-5">
 				<div class="theTitle">
-					manicure + blowout 45 minutes
+					manicure + blowout 45 minutes
 				</div>
 				<div class="info col-md-8 hidden-xs">
 					Chic Hair + Chic Nails in 45 Minutes
