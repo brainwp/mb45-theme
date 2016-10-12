@@ -60,6 +60,10 @@
 	color: $cor-btt-hover-txt;
 	transition:$default-animation;
 }
+.section {
+	background-size: cover;
+	background-position: center;
+}
 
 .section.color-black {
 	.theTitle{
