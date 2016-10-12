@@ -12,7 +12,6 @@ jQuery(document).ready(function($) {
 		autoScrolling: true,
 		onLeave: function(index, nextIndex, direction){
             var leavingSection = $(this);
-            //after leaving section 2
             if(index == 1 && direction =='down'){
                $('#header').addClass('header-active',150);
             }
@@ -29,6 +28,16 @@ jQuery(document).ready(function($) {
 		navigationPosition: 'left',
 		scrollBar: false,
 		autoScrolling: true,
+		onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+            if(index == 1 && direction =='down'){
+               $('#header').addClass('header-active',150);
+            }
+
+            else if(index == 2 && direction == 'up'){
+                $('#header').removeClass('header-active',150);
+            }
+        }
 	});
 	$('#fullpage-hair').fullpage({
 		menu: '#header',
@@ -36,12 +45,29 @@ jQuery(document).ready(function($) {
 		navigationPosition: 'left',
 		scrollBar: false,
 		autoScrolling: true,
+		onLeave: function(index, nextIndex, direction){
+            var leavingSection = $(this);
+            if(index == 1 && direction =='down'){
+               $('#header').addClass('header-active',150);
+            }
+
+            else if(index == 2 && direction == 'up'){
+                $('#header').removeClass('header-active',150);
+            }
+        }
 	});
 
 
 	$( '.hair-name' ).center();
 
 	$height = $(window).height() - 100;
+	$(window).on("scroll", function(e){
+		if($(window).scrollTop() > $height) {
+			$('#header').addClass('header-active',150);
+		}else{
+			$('#header').removeClass('header-active',150);
+		};
+	});
 	$width = $(window).width();
 	$mobileHeight = $(window).height();
 	if($width <= 991) {
@@ -49,5 +75,8 @@ jQuery(document).ready(function($) {
 			height: "$mobileHeight"
 		});
 	}
+
+
+
 
 });
