@@ -1,6 +1,5 @@
 //FOOTER CSS
 
-#footer{display: none!Important;}
 .footerMenuTitle {
 	text-transform:uppercase;
 	font-weight: bold;
@@ -9,7 +8,8 @@ footer#footer {
 	background: #000;
 	color: white;
 	font-family: $familia-padrao;
-	padding-bottom: 15px;
+	padding-bottom: 25px;
+	padding-top: 20px;
 
 }
 .footerMenu {
@@ -26,6 +26,7 @@ footer{
 	list-style: none;
 	margin-left: 0px;
     padding-left: 0px;
+    margin-top: 10px;
 
 }
 .footerMenu ul li {

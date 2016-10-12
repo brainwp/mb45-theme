@@ -61,8 +61,10 @@ get_header(); ?>
 		<?php endwhile;?>
 		<?php wp_reset_postdata();?>
 	<?php endif;?>
+	<div class="section fp-auto-height">
+		<?php get_footer();?>
+	</div>
 
 </div>
 
-<?php
-get_footer();
+
