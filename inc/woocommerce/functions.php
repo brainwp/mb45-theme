@@ -14,7 +14,9 @@ if ( ! function_exists( 'odin_before_content' ) ) {
 	 */
 	function odin_before_content() {
 		?>
-		<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
+		<div class="container">
+			<div class="row">
+				<main id="content" class="<?php echo odin_classes_page_sidebar(); ?>" tabindex="-1" role="main">
 		<?php
 	}
 }
@@ -28,7 +30,9 @@ if ( ! function_exists( 'odin_after_content' ) ) {
 	 */
 	function odin_after_content() {
 		?>
-		</main><!-- #main -->
+				</main><!-- #main -->
+			</div><!-- .row -->
+		</div><!-- .container -->
 		<?php
 	}
 }
