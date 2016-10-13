@@ -23,7 +23,32 @@
     font-weight: 900;
     src: url(../fonts/Gotham-Ultra.otf);
 }
-
+ul.nav li.dropdown:hover > ul.dropdown-menu{
+    display: block;
+    margin: 0;
+    margin-left: 14px;
+}
+ul.dropdown-menu {
+    background: none;
+    border: 0px;
+    box-shadow: none;
+}
+ul.dropdown-menu a {
+    color: white;
+    padding-left: 0px;
+    font-size: 11px;
+    padding-right: 0px;
+    display: inline-block;
+    margin-bottom: 7px;
+    transition: $default-animation;
+    border-bottom: 0px;
+}
+ul.dropdown-menu a:hover{
+    background: none;
+    color: white;
+	border-bottom: 1px solid;
+	transition: $default-animation;
+}
 #header{
 	transition: $default-animation;
 }
@@ -68,7 +93,7 @@
     margin-top: 6px;
 }
 .navbar-nav>li{
-	padding-left: 11em;
+	margin-left: 11em;
 }
 #header{
 	position:fixed;
