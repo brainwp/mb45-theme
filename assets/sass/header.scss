@@ -23,8 +23,7 @@
     font-weight: 900;
     src: url(../fonts/Gotham-Ultra.otf);
 }
-ul.nav li.dropdown:hover > ul.dropdown-menu{
-    display: block;
+ul.nav li.dropdown > ul.dropdown-menu{
     margin: 0;
     margin-left: 14px;
 }
@@ -43,6 +42,9 @@ ul.dropdown-menu a {
     transition: $default-animation;
     border-bottom: 0px;
 }
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+    background: none;
+}
 ul.dropdown-menu a:hover{
     background: none;
     color: white;
@@ -51,6 +53,9 @@ ul.dropdown-menu a:hover{
 }
 #header{
 	transition: $default-animation;
+}
+.menu-item-has-children .caret{
+	display: none!important;
 }
 
 .header-active{
@@ -125,6 +130,9 @@ ul.dropdown-menu a:hover{
 button.navbar-toggle {
     transition: $default-animation;
 }
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+	background: none;
+}
 @media all and (max-width: 992px) {
 	.logo{
     	max-width: 100px;
@@ -196,4 +204,20 @@ button.navbar-toggle {
 	.navbar-nav>li {
     	padding-left: 5em;
 	}
+}
+@media all and (max-width: 768px) {
+	ul.nav li.dropdown:hover > ul.dropdown-menu{
+		text-align: right;
+		margin-left: -14px;
+	}
+	.menu-item-has-children .caret{
+		display: inline-block!important;
+	}
+
+	.navbar-nav>li{
+		padding: 0px!important;
+	}
+}
+@media all and (min-width: 768px) {
+
 }
