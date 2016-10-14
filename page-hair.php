@@ -67,8 +67,10 @@ get_header(); ?>
 		</div>
 
 	</div>
+	<div class="section fp-auto-height">
+		<?php get_footer();?>
+	</div>
 
 </div>
 
-<?php
-get_footer();
+
