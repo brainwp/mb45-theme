@@ -28,17 +28,18 @@ get_header(); ?>
 			<div class="hold">
 				<div class="hair-name">
 					<?php the_content(); ?>
+					<!-- <span>DOWN</span><span> 1</span> -->
 				</div>
 
-						<div class="row">
-							<div class="col-md-6 image1"></div>
-							<div class="col-md-6 image1"></div>
-						</div>
+				<div class="row">
+					<div class="col-md-6 image1"></div>
+					<div class="col-md-6 image1"></div>
+				</div>
 
-						<div class="row hidden-xs">
-							<div class="col-md-6 image1"></div>
-							<div class="col-md-6 image1"></div>
-						</div>
+				<div class="row hidden-xs">
+					<div class="col-md-6 image1"></div>
+					<div class="col-md-6 image1"></div>
+				</div>
 
 
 
