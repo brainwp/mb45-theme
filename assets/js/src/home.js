@@ -47,6 +47,13 @@ jQuery(document).ready(function($) {
 		scrollBar: false,
 		autoScrolling: true,
 	});
+	$('#fullpage-brands').fullpage({
+		menu: '#header',
+		navigation: true,
+		navigationPosition: 'left',
+		scrollBar: false,
+		autoScrolling: true,
+	});
 
 
 	$( '.hair-name' ).center();
