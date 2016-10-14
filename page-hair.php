@@ -29,17 +29,27 @@ get_header(); ?>
 				<div class="hair-name">
 					<?php the_content(); ?>
 				</div>
-
-						<div class="row">
-							<div class="col-md-6 image1"></div>
-							<div class="col-md-6 image1"></div>
-						</div>
-
-						<div class="row hidden-xs">
-							<div class="col-md-6 image1"></div>
-							<div class="col-md-6 image1"></div>
-						</div>
-
+				<?php if ( $value = get_post_meta( get_the_ID(), 'gallery_hair', true ) ) : ?>
+					<?php $images = explode( ',', $value );?>
+					<?php if ( is_array( $images ) && ! empty( $images ) ) : ?>
+							<div class="row">
+								<?php $i = 0;?>
+								<?php foreach( $images as $image_id ) : ?>
+									<?php $image = wp_get_attachment_image_src( $image_id, 'large' ); ?>
+									<?php if ( ! $image || ! is_array( $image ) ) {
+										continue;
+									}?>
+									<?php if ( $i == 2 ) : ?>
+										</div>
+										<div class="row hidden-xs">
+									<?php endif;?>
+									<?php $style = sprintf( 'background-image:url( %s );', $image[0] );?>
+									<div class="col-md-6 each-image" style="<?php echo esc_attr( $style );?>"></div>
+									<?php $i++;?>
+								<?php endforeach;?>
+							</div>
+						<?php endif;?>
+				<?php endif;?>
 
 
 			</div>
