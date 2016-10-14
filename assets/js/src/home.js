@@ -11,16 +11,16 @@ jQuery(document).ready(function($) {
 		scrollBar: false,
 		autoScrolling: true,
 		// DO NOT DELETE THE COMENT BELOW. THE CLIENT CAN CHANGE THE IDEA. IF THERE'S NOT COMENT, HE CHANGE THE IDEA :D.
-		onLeave: function(index, nextIndex, direction){
-            var leavingSection = $(this);
-            if(index == 1 && direction =='down'){
-               $('#header').addClass('header-active',150);
-            }
+		// onLeave: function(index, nextIndex, direction){
+  //           var leavingSection = $(this);
+  //           if(index == 1 && direction =='down'){
+  //              $('#header').addClass('header-active',150);
+  //           }
 
-            else if(index == 2 && direction == 'up'){
-                $('#header').removeClass('header-active',150);
-            }
-        }
+  //           else if(index == 2 && direction == 'up'){
+  //               $('#header').removeClass('header-active',150);
+  //           }
+  //       }
 	});
 
 	$('#fullpage-nails').fullpage({
@@ -29,16 +29,16 @@ jQuery(document).ready(function($) {
 		navigationPosition: 'left',
 		scrollBar: false,
 		autoScrolling: true,
-		onLeave: function(index, nextIndex, direction){
-            var leavingSection = $(this);
-            if(index == 1 && direction =='down'){
-               $('#header').addClass('header-active',150);
-            }
+		// onLeave: function(index, nextIndex, direction){
+  //           var leavingSection = $(this);
+  //           if(index == 1 && direction =='down'){
+  //              $('#header').addClass('header-active',150);
+  //           }
 
-            else if(index == 2 && direction == 'up'){
-                $('#header').removeClass('header-active',150);
-            }
-        }
+  //           else if(index == 2 && direction == 'up'){
+  //               $('#header').removeClass('header-active',150);
+  //           }
+  //       }
 	});
 	$('#fullpage-hair').fullpage({
 		menu: '#header',
