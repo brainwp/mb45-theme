@@ -58,14 +58,14 @@ jQuery(document).ready(function($) {
 
 	$( '.hair-name' ).center();
 
-	$height = $(window).height() - 100;
-	$(window).on("scroll", function(e){
-		if($(window).scrollTop() > $height) {
-			$('#header').addClass('header-active',150);
-		}else{
-			$('#header').removeClass('header-active',150);
-		};
-	});
+	// $height = $(window).height() - 100;
+	// $(window).on("scroll", function(e){
+	// 	if($(window).scrollTop() > $height) {
+	// 		$('#header').addClass('header-active',150);
+	// 	}else{
+	// 		$('#header').removeClass('header-active',150);
+	// 	};
+	// });
 	$width = $(window).width();
 	$mobileHeight = $(window).height();
 	if($width <= 991) {
