@@ -28,6 +28,7 @@ get_header(); ?>
 			<div class="hold">
 				<div class="hair-name">
 					<?php the_content(); ?>
+					<!-- <span>DOWN</span><span> 1</span> -->
 				</div>
 				<?php if ( $value = get_post_meta( get_the_ID(), 'gallery_hair', true ) ) : ?>
 					<?php $images = explode( ',', $value );?>
@@ -50,7 +51,6 @@ get_header(); ?>
 							</div>
 						<?php endif;?>
 				<?php endif;?>
-
 
 			</div>
 		</div>
