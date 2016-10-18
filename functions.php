@@ -38,6 +38,7 @@ require_once get_template_directory() . '/core/classes/class-metabox.php';
 // require_once get_template_directory() . '/core/classes/class-user-meta.php';
 // require_once get_template_directory() . '/core/classes/class-post-status.php';
 //require_once get_template_directory() . '/core/classes/class-term-meta.php';
+// carrega os fields do odin
 require_once get_template_directory() . '/inc/odin-fields.php';
 
 /**
