@@ -4,7 +4,9 @@
     font-weight: normal;
     src: url(../fonts/Times-Italic.ttf);
 }
-
+div#fp-nav ul li:last-child {
+    display: none;
+}
 // REMOVER APOS DA COLOCAÇÃO DO LOOOP
 .two {
 	background: url(../images/2.png)!important;
@@ -22,7 +24,7 @@
 	text-transform: uppercase;
 	font-family: $familia-padrao;
 	font-size: $font-size-title;
-	letter-spacing: 6px;
+	letter-spacing: 3px;
 	color: $cor-txt-post;
 	font-weight: bold;
 }
@@ -199,12 +201,7 @@ input[type="submit"]:hover {
 .section.form {
     margin-bottom:0;
 }
-.color-white{
-	text-shadow: 1.5px 0.5px 2px rgba(68,68,68,0.40);
-}
-.color-black{
-	text-shadow: 1.5px 0.5px 2px rgba(68,68,68,0.20);
-}
+
 @media all and (max-width: 992px) {
 	.theTitle{
 		padding-right: 80px;
