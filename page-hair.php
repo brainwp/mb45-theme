@@ -22,7 +22,7 @@ get_header(); ?>
 	$query = new WP_Query($args);
 	?>
 	<?php if( $query -> have_posts() ) : ?>
-		<?php while( $query -> have_posts() ): $query -> the_post(); ?>
+		<?php while( $query -> have_posts() ): $query->the_post(); ?>
 	<div class="section">
 		<div class="container-fluid">
 			<div class="hold">

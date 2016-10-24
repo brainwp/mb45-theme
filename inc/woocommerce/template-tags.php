@@ -71,3 +71,14 @@ if ( ! function_exists( 'odin_header_cart' ) ) {
 		}
 	}
 }
+
+/**
+ * Check current step
+ * @param int $current
+ * @return string
+ */
+function is_current_step( $current ) {
+	if ( $current == 1 && is_singular( 'product' ) ) {
+		return 'current';
+	}
+}
