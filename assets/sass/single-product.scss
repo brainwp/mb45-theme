@@ -1,7 +1,10 @@
-body.single-product {
+body.page-template-page-appointment {
 	background: $cor-roxo;
 	header#header {
 		background: $cor-roxo;
+	}
+	footer {
+		display: none;
 	}
 }
 .product-infos {
@@ -23,5 +26,14 @@ body.single-product {
 			color:$cor-txt-post;
 			text-transform: uppercase;
 		}
+	}
+}
+#page-appointment {
+	* {
+		color:$cor-txt-post;
+	}
+	select {
+		background:$cor-txt-post;
+		color:$cor-preto;
 	}
 }
