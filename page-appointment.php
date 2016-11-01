@@ -6,7 +6,8 @@
  * @package Odin
  * @since 2.2.0
  */
-get_header( 'shop' ); ?>
+get_header( 'shop' );
+?>
 <?php while( have_posts() ) : the_post(); ?>
 <header class="product-infos col-md-12">
 	<div class="col-md-5 pull-left product-title">
@@ -50,7 +51,7 @@ get_header( 'shop' ); ?>
 			$value = 'true';
 		}
 		?>
-		<div class="col-md-12 each-customer" <?php echo $style;?> id="customer-<?php echo $i;?>">
+		<div class="col-md-12 each-customer" <?php echo $style;?> id="customer-<?php echo $i;?>" data-customer="<?php echo $i;?>">
 			<input type="hidden" name="selected[<?php echo $i;?>]" value="<?php echo $value;?>" id="is-selected-<?php echo $i;?>" />
 			<h3 class="guest-name">
 				<?php if ( $i == 0 ) : ?>
@@ -63,7 +64,10 @@ get_header( 'shop' ); ?>
 				<label><?php _e( 'Não sei a label disso', 'odin' );?></label>
 				<?php $terms = get_terms( array( 'product_cat' ), array( 'hide_empty' => true ) );?>
 				<?php if ( $terms && is_array( $terms ) ) : ?>
-					<select name="product_id[<?php echo $i;?>]" class="product-id-select">
+					<select name="product_id[<?php echo $i;?>]" class="product-id-select" data-num="<?php echo $i;?>">
+						<option value="" selected>
+							<?php _e( 'Select a product', 'odin' );?>
+						</option>
 						<?php foreach ( $terms as $term ) : ?>
 							<?php $args = array(
 								'post_type' 	=> 'product',
@@ -81,11 +85,12 @@ get_header( 'shop' ); ?>
 						<?php endforeach;?>
 					</select>
 				<?php endif;?>
-				<div class="col-md-5 pull-right select-field">
+				<div class="col-md-5 pull-right select-field appointment-date-fields" id="appointment-fields-<?php echo $i;?>">
 				</div><!-- .col-md-5 pull-right select-field -->
 			</div><!-- .col-md-5 pull-left select-field -->
 		</div><!-- .col-md-12 each-customer -->
 	<?php endfor;?>
+	<button class="primary" id="send-step-1"><?php _e( 'Next', 'odin' );?></button>
 </form><!-- #page-appointment.col-md-12 -->
 
 <?php
