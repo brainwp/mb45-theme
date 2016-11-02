@@ -11,8 +11,11 @@ class MB45_Appointment_Form {
 		add_action( 'wp_ajax_mb45_appointment_form', array( &$this, 'run_ajax_frontend' ) );
 		add_action( 'wp_ajax_nopriv_mb45_appointment_form', array( &$this, 'run_ajax_frontend' ) );
 
+		// process form
+		add_action( 'get_header', array( &$this, 'process_form' ) );
+
 		// scripts
-		add_action( 'init', array( &$this, 'scripts' ) );
+		add_action( 'init', array( &$this, 'scripts' ), 9999 );
 	}
 	/**
 	 * Show form on frontend
@@ -34,6 +37,10 @@ class MB45_Appointment_Form {
 		echo '</div>';
 		wp_die();
 	}
+	/**
+	 * Load appointment scripts on front-end
+	 * @return null
+	 */
 	public function scripts() {
 
 		wp_enqueue_script( 'jquery-blockui' );
@@ -44,6 +51,34 @@ class MB45_Appointment_Form {
 		wp_enqueue_script( 'wc-appointments-staff-picker', WC_APPOINTMENTS_PLUGIN_URL . '/assets/js/staff-picker' . $suffix . '.js', array( 'wc-appointments-appointment-form' ), WC_APPOINTMENTS_VERSION, true );
 		wp_enqueue_script( 'wc-appointments-select2', WC_APPOINTMENTS_PLUGIN_URL . '/assets/js/select2' . $suffix . '.js', array( 'wc-appointments-appointment-form' ), WC_APPOINTMENTS_VERSION, true );
 		wp_enqueue_style( 'dashicons' );
+	}
+	/**
+	 * Process appointment form
+	 * @return null
+	 */
+	public function process_form() {
+		if ( ! isset( $_REQUEST[ 'is-appointment-form'] ) ) {
+			return;
+		}
+		// Make a backup of global $_POST var
+		$posted_data = $_POST;
+		$guests = intval( $_REQUEST[ 'guests-num' ] );
+		$guests++;
+		for ( $guest = 0; $guest < $guests; $guest++ ) {
+			if ( $guest > 0 && $_REQUEST[ 'selected' ][ $guest ] == 'false' ) {
+				continue;
+			}
+			// Empty global $_POST and then add each variable
+			$_POST = array();
+			foreach ( $_REQUEST as $key => $value ) {
+				if ( is_array( $_REQUEST[ $key ] ) && isset( $_REQUEST[ $key ][ $guest ] ) ) {
+					$_POST[ $key ] = $_REQUEST[ $key ][ $guest ];
+				}
+			}
+			WC()->cart->add_to_cart( $_POST[ 'product_id'] );
+		}
+		// Restore original $_POST;
+		$_POST = $posted_data;
 	}
 }
 new MB45_Appointment_Form();

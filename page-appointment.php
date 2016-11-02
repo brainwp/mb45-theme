@@ -27,6 +27,7 @@ get_header( 'shop' );
 	</div><!-- .col-md-7 pull-right checkout-steps -->
 </header><!-- .product-infos col-md-12 -->
 <form class="col-md-12" id="page-appointment" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="is-appointment-form" value="true" />
 	<div class="col-md-12 select-field">
 		<label>
 			<?php _e( 'How many guests?', 'odin' );?>
