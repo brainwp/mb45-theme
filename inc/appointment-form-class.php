@@ -31,8 +31,12 @@ class MB45_Appointment_Form {
 		$post = get_post( $product_id );
 
 		$form = new MB45_Change_Appointment_Form_Loader( $product );
-		$form->output();
-		echo '<div id="cf">';
+		$id = rand( 3200, 99999 );
+		printf( __( '<a href="#" class="btn show-options-btn" data-show="false" data-id="#show-%s">Choose a date</a>', 'odin' ), $id );
+		printf( '<div id="show-%s" class="col-md-12 show-options" style="display:none;">', $id );
+			$form->output();
+		echo '</div>';
+		echo '<div class="custom-fields-temp" style="display:none;">';
 			$GLOBALS['Product_Addon_Display']->display();
 		echo '</div>';
 		wp_die();

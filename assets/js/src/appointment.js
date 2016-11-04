@@ -39,7 +39,9 @@ jQuery(document).ready(function($) {
 		ajax.done( function( data, textStatus, request ){
 			wc_appointment_form_params = JSON.parse( request.getResponseHeader( 'json-string' ) );
 			$( '#appointment-fields-' + guest_num ).html( data );
-
+			var cf_html = $( '#appointment-fields-' + guest_num ).find( '.custom-fields-temp').html();
+			$( '#appointment-fields-' + guest_num ).find( '.custom-fields-temp').remove();
+			$( '#appointment-custom-fields-' + guest_num ).html( cf_html );
 
 	var startDate,
 		endDate,
@@ -478,5 +480,18 @@ jQuery(document).ready(function($) {
 				console.log( $( this ).attr( 'name' ) );
 			});
 		});
+	});
+	$( 'body' ).on( 'click', '.show-options-btn', function(e){
+		e.preventDefault();
+
+		var $element = $( $( this ).attr( 'data-id') );
+		var open = $( this ).attr( 'data-show' );
+		if ( open == 'false' ) {
+			$element.fadeIn( 'slow' );
+			$( this ).attr( 'data-show', 'true' );
+		} else {
+			$element.fadeOut( 'slow' );
+			$( this ).attr( 'data-show', false );
+		}
 	});
 });

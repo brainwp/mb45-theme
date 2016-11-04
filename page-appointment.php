@@ -61,10 +61,11 @@ get_header( 'shop' );
 					<?php printf( __( 'Guest %s', 'odin' ), $i );?>
 				<?php endif;?>
 			</h3>
-			<div class="col-md-5 pull-left select-field">
-				<label><?php _e( 'Não sei a label disso', 'odin' );?></label>
-				<?php $terms = get_terms( array( 'product_cat' ), array( 'hide_empty' => true ) );?>
-				<?php if ( $terms && is_array( $terms ) ) : ?>
+			<div class="col-md-9 pull-left select-field">
+				<div class="col-md-5 select-field">
+					<label><?php _e( 'Não sei a label disso', 'odin' );?></label>
+					<?php $terms = get_terms( array( 'product_cat' ), array( 'hide_empty' => true ) );?>
+					<?php if ( $terms && is_array( $terms ) ) : ?>
 					<select name="product_id[<?php echo $i;?>]" class="product-id-select" data-num="<?php echo $i;?>">
 						<option value="" selected>
 							<?php _e( 'Select a product', 'odin' );?>
@@ -85,9 +86,11 @@ get_header( 'shop' );
 							</optgroup>
 						<?php endforeach;?>
 					</select>
-				<?php endif;?>
-				<div class="col-md-5 pull-right select-field appointment-date-fields" id="appointment-fields-<?php echo $i;?>">
-				</div><!-- .col-md-5 pull-right select-field -->
+					<?php endif;?>
+				</div><!-- .col-md-12 select-field -->
+				<div class="col-md-4 select-field appointment-date-fields" id="appointment-fields-<?php echo $i;?>">
+				</div><!-- .col-md-4 pull-right select-field -->
+				<div class="col-md-3 custom-fields pull-right" id="appointment-custom-fields-<?php echo $i;?>"></div><!-- .col-md-3 custom-fields -->
 			</div><!-- .col-md-5 pull-left select-field -->
 		</div><!-- .col-md-12 each-customer -->
 	<?php endfor;?>
