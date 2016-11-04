@@ -278,10 +278,21 @@ function odin_enqueue_scripts() {
 	wp_enqueue_script( 'html5shiv', $template_url . '/assets/js/html5.js' );
 	wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
+	// General scripts.
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		// Bootstrap.
+		wp_enqueue_script( 'bootstrap', $template_url . '/assets/js/libs/bootstrap.min.js', array(), null, true );
 
-	// Grunt main file with Bootstrap, FitVids and others libs.
-	wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
-	wp_localize_script( 'odin-main-min', 'odin', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ), 'we_value' => 1234 ) );
+		// FitVids.
+		wp_enqueue_script( 'fitvids', $template_url . '/assets/js/libs/jquery.fitvids.js', array(), null, true );
+
+		// Main jQuery.
+		wp_enqueue_script( 'odin-main', $template_url . '/assets/js/main.js', array(), null, true );
+	} else {
+		// Grunt main file with Bootstrap, FitVids and others libs.
+		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
+	}
+
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
 
@@ -368,11 +379,6 @@ require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/acf/acf.php';
 require_once get_template_directory() . '/inc/fields.php';
 
-/**
- * Load Appointment stuff
- */
-require_once get_template_directory() . '/inc/appointment-form-loader-class.php';
-require_once get_template_directory() . '/inc/appointment-form-class.php';
 
 /**
  * Remove admin bar on dev & localhost server
