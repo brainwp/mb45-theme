@@ -32,6 +32,7 @@ class MB45_Appointment_Form {
 
 		$form = new MB45_Change_Appointment_Form_Loader( $product );
 		$id = rand( 3200, 99999 );
+		_e( '<label>When?</label>', 'odin' );
 		printf( __( '<a href="#" class="btn show-options-btn" data-show="false" data-id="#show-%s">Choose a date</a>', 'odin' ), $id );
 		printf( '<div id="show-%s" class="col-md-12 show-options" style="display:none;">', $id );
 			$form->output();
