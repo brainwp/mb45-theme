@@ -7,12 +7,55 @@
     	text-transform: uppercase;
     	letter-spacing: 3px;
 	}
+	a.btn.show-options-btn {
+	    font-size: 0.9em;
+	    text-transform: uppercase;
+	    color: white;
+	    padding: 0px;
+	}
+	.wc-appointments-date-picker .ui-datepicker *{
+		color: white;
+	}
+	.wc-appointments-date-picker .ui-datepicker td .ui-state-default{
+		color: white;
+	}
+	.wc-appointments-date-picker .ui-datepicker td.appointable a:hover{
+		color: white;
+	}
+	.wc-appointments-date-picker .ui-datepicker td.ui-datepicker-current-day a, .wc-appointments-date-picker .ui-datepicker td.ui-datepicker-current-day a:hover{
+		background: #f87b79;
+	}
 	.product-title{
 		padding: 0px;
 		margin: 0px;
 	}
+	.slot-picker {
+    	text-transform: uppercase;
+    	padding-top: 17px;
+    	padding-bottom: 17px;
+	}
 	#header{
 		position: inherit;
+	}
+	.control{
+		display: flex;
+		flex-flow: column;
+	}
+	.each-customer h3 {
+    	text-transform: uppercase;
+    	/*margin-bottom: 13px!important;*/
+    	font-weight: bold;
+    	letter-spacing: 4px;
+	}
+	.each-customer {
+    	margin-bottom: 25px!important;
+	}
+	.each-customer, .each-customer h3 {
+   		padding: 0px;
+    	margin: 0px;
+	}
+	.select-field {
+    	padding: 0px;
 	}
 	.product-description {
 	    font-family: $familia-padrao;
@@ -49,6 +92,25 @@
 	    background-size: 23px;
      	margin: 0px;
    		padding: 0px;
+	}
+	.nxt-step{
+		background: #f87b79;
+	    color: white;
+	    text-transform: uppercase;
+	    letter-spacing: 3px;
+	    padding-top: 13px;
+	    padding-bottom: 13px;
+	    border-radius: 0px;
+	    border: none;
+	    margin-top: 21px;
+	}
+	.nxt-step:hover{
+		background: #f87b79;
+		color: white;
+	}
+	.nxt-step:active{
+		background: #f87b79;
+		color: white;
 	}
  }
 

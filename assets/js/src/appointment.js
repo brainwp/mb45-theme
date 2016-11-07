@@ -11,10 +11,10 @@ jQuery(document).ready(function($) {
 				continue;
 			}
 			if ( i > value ) {
-				$( '#customer-' + i ).fadeOut( 2000 );
+				$( '#customer-' + i ).fadeOut( 500 );
 				$( '#is-selected-' + i ).val( 'false' );
 			} else {
-				$( '#customer-' + i ).fadeIn( 2000 );
+				$( '#customer-' + i ).fadeIn( 500 );
 				$( '#is-selected-' + i ).val( 'true' );
 			}
 
