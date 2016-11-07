@@ -65,7 +65,7 @@ get_header( 'shop' );
 					$value = 'true';
 				}
 				?>
-				<div class="col-md-12 each-customer" <?php echo $style;?> id="customer-<?php echo $i;?>" data-customer="<?php echo $i;?>">
+				<div class="each-customer" <?php echo $style;?> id="customer-<?php echo $i;?>" data-customer="<?php echo $i;?>">
 					<input type="hidden" name="selected[<?php echo $i;?>]" value="<?php echo $value;?>" id="is-selected-<?php echo $i;?>" />
 					<h3 class="guest-name">
 						<?php if ( $i == 0 ) : ?>
@@ -74,41 +74,43 @@ get_header( 'shop' );
 							<?php printf( __( 'Guest %s', 'odin' ), $i );?>
 						<?php endif;?>
 					</h3>
-					<div class="col-md-9 pull-left select-field">
-						<div class="col-md-5 select-field">
+					<div class="select-field">
+						<div class="select-field col-md-12">
 							<label><?php _e( 'Não sei a label disso', 'odin' );?></label>
 							<?php $terms = get_terms( array( 'product_cat' ), array( 'hide_empty' => true ) );?>
 							<?php if ( $terms && is_array( $terms ) ) : ?>
-							<select name="product_id[<?php echo $i;?>]" class="product-id-select col-md-2 select-guest" data-num="<?php echo $i;?>">
-								<option value="" selected>
-									<?php _e( 'Select a product', 'odin' );?>
-								</option>
-								<?php foreach ( $terms as $term ) : ?>
-									<?php $args = array(
-										'post_type' 	=> 'product',
-										'product_cat'	=> $term->slug
-									);
-									$query = new WP_Query( $args );?>
-									<optgroup label="<?php echo apply_filters( 'the_title', $term->name );?>">
-										<?php if ( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();?>
-											<option value="<?php echo get_the_ID();?>">
-												<?php the_title();?>
-											</option>
-										<?php endwhile; endif;?>
-										<?php wp_reset_postdata();?>
-									</optgroup>
-								<?php endforeach;?>
-							</select>
+							<div class="select-area col-md-2">
+								<select name="product_id[<?php echo $i;?>]" class="product-id-select select-guest" data-num="<?php echo $i;?>">
+									<option value="" selected>
+										<?php _e( 'Select a product', 'odin' );?>
+									</option>
+									<?php foreach ( $terms as $term ) : ?>
+										<?php $args = array(
+											'post_type' 	=> 'product',
+											'product_cat'	=> $term->slug
+										);
+										$query = new WP_Query( $args );?>
+										<!-- <optgroup label="<?php echo apply_filters( 'the_title', $term->name );?>"> -->
+											<?php if ( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();?>
+												<option value="<?php echo get_the_ID();?>">
+													<?php the_title();?>
+												</option>
+											<?php endwhile; endif;?>
+											<?php wp_reset_postdata();?>
+										<!-- </optgroup> -->
+									<?php endforeach;?>
+								</select>
+							</div>
 							<?php endif;?>
-						</div><!-- .col-md-12 select-field -->
+						</div>
 						<div class="col-md-4 select-field appointment-date-fields" id="appointment-fields-<?php echo $i;?>">
-						</div><!-- .col-md-4 pull-right select-field -->
-						<div class="col-md-3 custom-fields pull-right" id="appointment-custom-fields-<?php echo $i;?>"></div><!-- .col-md-3 custom-fields -->
-					</div><!-- .col-md-5 pull-left select-field -->
-				</div><!-- .col-md-12 each-customer -->
+						</div>
+						<div class="col-md-3 custom-fields pull-right" id="appointment-custom-fields-<?php echo $i;?>"></div>
+					</div>
+				</div>
 			<?php endfor;?>
 			<button class="primary" id="send-step-1"><?php _e( 'Next', 'odin' );?></button>
-		</form><!-- #page-appointment.col-md-12 -->
+		</form>
 
 	<?php
 	endwhile; ?>
