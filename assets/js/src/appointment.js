@@ -490,8 +490,34 @@ jQuery(document).ready(function($) {
 			$element.fadeIn( 'slow' );
 			$( this ).attr( 'data-show', 'true' );
 		} else {
-			$element.fadeOut( 'slow' );
+			$element.fadeOut( 'slow', function() {
+				$element.find( '.form-field-wide').hide();
+				$element.find( 'fieldset').show();
+			});
 			$( this ).attr( 'data-show', false );
 		}
 	});
+	$( 'body' ).on( 'change', '[name="wc_appointments_field_start_date_day"]', function( e ) {
+		console.log( $( this ).val() );
+		var $options_elem = $( this ).closest( '.show-options' );
+		$options_elem.find( 'fieldset' ).fadeOut( 'slow' );
+		$options_elem.find( '.form-field-wide' ).fadeIn( 'slow' );
+		var $button = $options_elem.closest( '.appointment-date-fields' ).children( '.show-options-btn');
+		var button_default = $button.html();
+		$button.html( wc_appointment_form_params.chooseTime );
+	});
+	$( 'body' ).on( 'change', '[name="wc_appointments_field_start_date_time"]', function( e ) {
+		var $options_elem = $( this ).closest( '.show-options' );
+		var $fields = $options_elem.children( 'fieldset').children( '.wc-appointments-date-picker-date-fields' );
+		var $button = $options_elem.closest( '.appointment-date-fields' ).find( '.show-options-btn' );
+		var date_string = wc_appointment_form_params.selectedText;
+		date_string = date_string.replace( 'MM', $fields.find( '[name="wc_appointments_field_start_date_month"]' ).val() );
+		date_string = date_string.replace( 'DD', $fields.find( '[name="wc_appointments_field_start_date_day"]' ).val() );
+		date_string = date_string.replace( 'AAAA', $fields.find( '[name="wc_appointments_field_start_date_year"]' ).val() );
+		date_string = date_string.replace( 'HOUR', $( this ).val() );
+
+		$button.html( date_string );
+		$button.trigger( 'click' );
+		console.log( date_string );
+	} );
 });

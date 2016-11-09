@@ -10,8 +10,10 @@
 	a.btn.show-options-btn {
 	    font-size: 0.9em;
 	    text-transform: uppercase;
-	    color: white;
-	    padding: 0px;
+	    color: $cor-preto;
+	    border-radius:0;
+	    display: inline-block;
+	    background: $cor-txt-post;
 	}
 	.wc-appointments-date-picker .ui-datepicker *{
 		color: white;
@@ -111,6 +113,18 @@
 	.nxt-step:active{
 		background: #f87b79;
 		color: white;
+	}
+	.appointment-date-fields fieldset {
+		border:1px solid $cor-txt-post;
+		legend {
+			display: none;
+		}
+	}
+	.appointment-date-fields {
+		.form-field-wide {
+			border:1px solid $cor-txt-post;
+			display: none;
+		}
 	}
  }
 
