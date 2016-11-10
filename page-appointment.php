@@ -45,7 +45,7 @@ get_header( 'shop' );
 
 
 		<!-- GENERAL FORM -->
-		<form class="col-md-12 form-appo" id="page-appointment" method="post" enctype="multipart/form-data">
+		<form class="col-md-12 form-appo" id="page-appointment" method="post" enctype="multipart/form-data" autocomplete="off">
 			<input type="hidden" name="is-appointment-form" value="true" />
 
 
@@ -137,7 +137,7 @@ get_header( 'shop' );
 				<?php endfor;?>
 			</div>
 
-			<input type="submit" value="<?php _e( 'Next', 'odin' );?>" form="page-appointmen" class="primary nxt-step col-md-3 pull-right" id="send-step-1">
+			<input type="submit" value="<?php _e( 'Next', 'odin' );?>" class="primary nxt-step col-md-3 pull-right" id="send-step-1">
 		</form>
 		</div>
 

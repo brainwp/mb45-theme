@@ -45,6 +45,7 @@ require_once get_template_directory() . '/inc/odin-fields.php';
  * Odin Widgets.
  */
 require_once get_template_directory() . '/core/classes/widgets/class-widget-like-box.php';
+require_once get_template_directory() . '/inc/custom-widgets.php';
 
 if ( ! function_exists( 'odin_setup_features' ) ) {
 
@@ -242,6 +243,15 @@ function odin_widgets_init() {
 			'after_title' => '</span>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name' => __( 'WooCommerce Pages', 'odin' ),
+			'id' => 'wc-pages-sidebar',
+			'description' => __( 'Footer Sidebar', 'odin' ),
+			'before_widget' => '<div class="col-md-12 wc-pages-sidebar>',
+			'after_widget' => '</div>',
+		)
+	);
 }
 
 add_action( 'widgets_init', 'odin_widgets_init' );
@@ -380,6 +390,9 @@ require_once get_template_directory() . '/inc/appointment-form-class.php';
  */
 function remove_admin_bar_on_dev() {
 	$site_url = home_url();
+	if ( isset( $_GET[ 'show_wpheader' ] ) ) {
+		return;
+	}
 	if ( strstr( $site_url, 'dev.' ) ) {
 		show_admin_bar( false );
 		return;
@@ -391,3 +404,13 @@ function remove_admin_bar_on_dev() {
 
 }
 add_action( 'init', 'remove_admin_bar_on_dev', 9999 );
+
+/**
+ * Show widget cart on checkout
+ * @param boolean $show
+ * @return boolean
+ */
+function show_widget_cart_on_checkout( $show ) {
+	return true;
+}
+add_filter( 'woocommerce_widget_cart_is_hidden', 'show_widget_cart_on_checkout' );
