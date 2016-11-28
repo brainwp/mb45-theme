@@ -47,7 +47,18 @@ get_header( 'shop' );
 		<!-- GENERAL FORM -->
 		<form class="col-md-12 form-appo" id="page-appointment" method="post" enctype="multipart/form-data" autocomplete="off">
 			<input type="hidden" name="is-appointment-form" value="true" />
+			<?php if ( $value = get_post_meta( get_the_ID(), 'appointment_product', true ) ) : ?>
+				<input type="hidden" name="appointment-product" value="<?php echo $value[0];?>" />
+				<?php global $product, $post;
+				$product_id = $value[0];
+				$product = wc_get_product( $product_id );
+				$post = get_post( $product_id );
+				$form = new MB45_Change_Appointment_Form_Loader( $product );
 
+			else : ?>
+				<?php _e( 'Oooops, the appointment product is not set yet!', 'odin' );?>
+				<?php wp_die();?>
+			<?php endif;?>
 
 			<!-- AREA 1 -->
 			<div class="col-md-4 select-field">
@@ -71,7 +82,7 @@ get_header( 'shop' );
 			<!-- END: AREA 1 -->
 
 			<div class="col-md-4 control">
-				<?php for ( $i = 0; $i < 3; $i++ ) : ?>
+				<?php for ( $i = 0; $i < 1; $i++ ) : ?>
 					<?php $style = '';
 						$value = 'false';
 						if ( $i > 0 ) {
@@ -84,41 +95,13 @@ get_header( 'shop' );
 					<!-- AREA 2 -->
 					<div class="col-md-12 each-customer" <?php echo $style;?> id="customer-<?php echo $i;?>" data-customer="<?php echo $i;?>">
 						<input type="hidden" name="selected[<?php echo $i;?>]" value="<?php echo $value;?>" id="is-selected-<?php echo $i;?>" />
-						<h3 class="guest-name">
-							<?php if ( $i == 0 ) : ?>
-								<!-- <?php _e( 'You', 'odin' );?> -->
-							<?php else : ?>
-								<?php printf( __( 'Guest %s', 'odin' ), $i );?>
-							<?php endif;?>
-						</h3>
 						<div class="select-field">
 							<div class="select-field col-md-12">
-								<label><?php _e( 'TREATMENT', 'odin' );?></label>
-								<?php $terms = get_terms( array( 'product_cat' ), array( 'hide_empty' => true ) );?>
-								<?php if ( $terms && is_array( $terms ) ) : ?>
-								<div class="select-area col-md-8">
-									<select name="product_id[<?php echo $i;?>]" class="product-id-select select-guest" data-num="<?php echo $i;?>">
-										<option value="" selected>
-											<?php _e( 'Select a product', 'odin' );?>
-										</option>
-										<?php foreach ( $terms as $term ) : ?>
-											<?php $args = array(
-												'post_type' 	=> 'product',
-												'product_cat'	=> $term->slug
-											);
-											$query = new WP_Query( $args );?>
-											<optgroup label="<?php echo apply_filters( 'the_title', $term->name );?>">
-												<?php if ( $query->have_posts() ) : while( $query->have_posts() ) : $query->the_post();?>
-													<option value="<?php echo get_the_ID();?>">
-														<?php the_title();?>
-													</option>
-												<?php endwhile; endif;?>
-												<?php wp_reset_postdata();?>
-											</optgroup>
-										<?php endforeach;?>
-									</select>
-								</div>
-								<?php endif;?>
+								<?php _e( '<label>When?</label>', 'odin' );?>
+								<?php printf( __( '<a href="#" class="btn show-options-btn" data-show="false" data-id="#show-%s">Choose a date</a>', 'odin' ), $id );
+								printf( '<div id="show-%s" class="col-md-12 show-options" style="display:none;">', $id );
+									$form->output();
+								echo '</div>';?>
 							</div>
 
 							<div class="col-md-3 custom-fields pull-right" id="appointment-custom-fields-<?php echo $i;?>"></div>
@@ -132,9 +115,10 @@ get_header( 'shop' );
 
 
 <!-- CALENDAR -->
-					<div class="col-md-8 select-field appointment-date-fields" id="appointment-fields-<?php echo $i;?>">
-					</div>
 				<?php endfor;?>
+			</div>
+			<div class="col-md-12 select-field appointment-date-fields">
+				<?php $GLOBALS['Product_Addon_Display']->display();?>
 			</div>
 
 			<input type="submit" value="<?php _e( 'Next', 'odin' );?>" class="primary nxt-step col-md-3 pull-right" id="send-step-1">
