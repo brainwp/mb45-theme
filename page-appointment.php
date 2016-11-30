@@ -22,8 +22,6 @@ get_header( 'shop' );
 							<?php _e( 'Book Appointment', 'odin' );?>
 						</span>
 
-
-
 					</div>
 					<div class="col-md-6 pull-right checkout-steps">
 						<?php for ( $i = 1; $i < 4; $i++ ) : ?>
@@ -38,7 +36,9 @@ get_header( 'shop' );
 
 			<div class="product-description col-md-3">
 					<?php the_content();?>
+					<?php wc_print_notices();?>
 			</div>
+
 		</section>
 		<!-- END: PAGE TITLE, INFORMATIONS -->
 

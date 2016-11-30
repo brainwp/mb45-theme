@@ -38,6 +38,39 @@ class MB45_Appointment_Form {
 		wp_die();
 	}
 	/**
+	 * Validate post data
+	 * @return boolean
+	 */
+	private function validate_post_data() {
+		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_time'] ) ) {
+			return false;
+		}
+		if ( empty( $_POST[ 'wc_appointments_field_start_date_time'] ) ) {
+			return false;
+		}
+		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_year'] ) ) {
+			return false;
+		}
+		if ( empty( $_POST[ 'wc_appointments_field_start_date_year'] ) ) {
+			return false;
+		}
+		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_month'] ) ) {
+			return false;
+		}
+		if ( empty( $_POST[ 'wc_appointments_field_start_date_month'] ) ) {
+			return false;
+		}
+		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_day'] ) ) {
+			return false;
+		}
+		if ( empty( $_POST[ 'wc_appointments_field_start_date_day'] ) ) {
+			return false;
+		}
+
+		// if all fields are ok, send true
+		return true;
+	}
+	/**
 	 * Load appointment scripts on front-end
 	 * @return null
 	 */
@@ -64,7 +97,8 @@ class MB45_Appointment_Form {
 		$posted_data = $_POST;
 		$guests = intval( $_REQUEST[ 'guests-num' ] );
 		$guests++;
-		for ( $guest = 0; $guest < $guests; $guest++ ) {
+		$has_notice = false;
+		for ( $guest = 0; $guest < 1; $guest++ ) {
 			// Empty global $_POST and then add each variable
 			$_POST = array();
 			foreach ( $_REQUEST as $key => $value ) {
@@ -72,7 +106,11 @@ class MB45_Appointment_Form {
 					$_POST[ $key ] = $_REQUEST[ $key ][ $guest ];
 				}
 			}
-			WC()->cart->add_to_cart( $_POST[ 'product_id'] );
+			if ( $this->validate_post_data() ) {
+				WC()->cart->add_to_cart( $_POST[ 'product_id'] );
+			} else {
+				wc_add_notice( __( 'The date is not filled in correctly', 'odin' ), 'error' );
+			}
 		}
 		// Restore original $_POST;
 		$_POST = $posted_data;
