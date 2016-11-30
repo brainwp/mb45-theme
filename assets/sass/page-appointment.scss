@@ -1,11 +1,96 @@
 .page-template-page-appointment,.single-product{
+	@media all and (max-width: 768px) {
+		.col-md-4.control{
+			margin-top: 26px;
+		}
+	}
 	background-color: $cor-roxo;
 	.general-title{
 		font-family: $familia-padrao;
     	font-weight: bold;
-    	font-size: 2.3em;
+    	font-size: 2.15em;
     	text-transform: uppercase;
     	letter-spacing: 3px;
+	}
+	a.btn.show-options-btn.col-md-12 {
+	    background: none;
+	    height: 46px;
+	    display: flex;
+	    padding-left: 25px;
+	    align-items: center;
+	    font-size: 1.1em;
+	}
+	.col-md-7.show-options {
+	    padding: 0px;
+	    font-size: 0.89em;
+	}
+	.addon-description {
+    	text-transform: uppercase;
+    	font-size: 1.1em;
+    	font-weight: 600;
+	}
+	.addon-description p {
+    	padding: 0px;
+    	margin-bottom: 5px;
+	}
+	.required-product-addon, .product-addon-service-2, .product-addon-service-3,.product-addon-service-4{
+		p.form-row.form-row-wide{
+			    overflow: hidden;
+			    background: url(../images/arrow.png) no-repeat right #EEE;
+			    margin: 0px;
+			    padding: 0px;
+			    display: block;
+			    background-repeat: no-repeat!important;
+			    background-color: #EEE!Important;
+			    background-position-x: right;
+			    background-size: 23px;
+		}
+	}
+
+	.product-addon-option-1, .product-addon-option-2, .product-addon-option-3, .product-addon-option-4{
+		p.form-row.form-row-wide{
+			padding-left: 43px;
+			width: 90%;
+			padding-top:5px;
+			label{
+				font-weight: 100;
+			}
+		}
+	}
+	.product-addon.product-addon-option-1 {
+    	margin-top: 28px;
+	}
+	select.addon.addon-select {
+	    color: #000;
+	    height: 46px;
+	    padding-left: 25px;
+	    font-size: 1.1em;
+	    background: transparent;
+	    line-height: 1;
+	    border: 0;
+	    border-radius: 0;
+	    -webkit-appearance: none;
+	    text-transform: uppercase;
+	    width: 100%;
+	}
+
+	table.ui-datepicker-calendar {
+    	text-transform: uppercase;
+	}
+
+	.ui-datepicker-title {
+    	text-transform: uppercase;
+	}
+	ul.slot_column {
+    	list-style: none;
+    	padding-left: 17px;
+	}
+	li.slot {
+    	padding-left: 13px;
+	}
+	li.slot a {
+    	color: white;
+    	opacity: 0.6;
 	}
 	a.btn.show-options-btn {
 	    font-size: 0.9em;
@@ -42,6 +127,7 @@
 	.control{
 		display: flex;
 		flex-flow: column;
+		padding: 0px;
 	}
 	.each-customer h3 {
     	text-transform: uppercase;
@@ -69,15 +155,15 @@
 	}
 	.select-field label {
 	    font-family: $familia-padrao;
-	    font-weight: 100;
+	    font-weight: 600;
 	    text-transform: uppercase;
-	    font-size: 1.2em;
+	    font-size: 1.1em;
 	}
 
 	.select-guest {
 	    color: #000;
-	    height: 40px;
-	    padding-left: 15px;
+	    height: 46px;
+	    padding-left: 25px;
 	    font-size: 1.1em;
 	    background: transparent;
 	   line-height: 1;
@@ -92,10 +178,17 @@
 	}
 	.select-area{
 	    overflow: hidden;
-	    background: url(../images/arrow.png) no-repeat right #fff;
+	    background: url(../images/arrow.png) no-repeat right #EEE;
 	    background-size: 23px;
      	margin: 0px;
    		padding: 0px;
+	}
+	.col-md-8.select-field.appointment-date-fields {
+    	margin-top: 23px;
+	}
+	.col-md-4.tes {
+    	padding: 0px;
+    	margin-top: 27px;
 	}
 	.nxt-step{
 		background: #f87b79;
@@ -106,6 +199,7 @@
 	    padding-bottom: 13px;
 	    border-radius: 0px;
 	    border: none;
+	    font-weight: bold;
 	    margin-top: 21px;
 	}
 	.nxt-step:hover{
@@ -160,10 +254,11 @@
 	    span {
 			display: inline-block;
 			padding-left:30px;
-			font-size:1.4em;
+			font-size:1.3em;
 			color:$cor-txt-post;
 			text-transform: uppercase;
 		}
 	}
+
 
 }
