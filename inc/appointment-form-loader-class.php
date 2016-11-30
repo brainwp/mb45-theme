@@ -37,8 +37,12 @@ class MB45_Change_Appointment_Form_Loader extends WC_Appointment_Form {
 			'i18n_end_date'					=> __( 'Choose an End Date', 'woocommerce-appointments' ),
 			'i18n_dates'					=> __( 'Dates', 'woocommerce-appointments' ),
 			'i18n_choose_options'			=> __( 'Please select the options for your appointment above first', 'woocommerce-appointments' ),
+			'chooseTime'					=> __( 'Choose Hour', 'odin' ),
+			'selectedText'					=> __( 'MM/DD/AAAA HOUR', 'odin' )
 		);
 		$json_params = json_encode( $appointment_form_params );
-		header( 'json-string: ' . $json_params );
+		if ( defined('DOING_AJAX') && DOING_AJAX ) {
+			header( 'json-string: ' . $json_params );
+		}
 	}
 }

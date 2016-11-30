@@ -31,14 +31,9 @@ class MB45_Appointment_Form {
 		$post = get_post( $product_id );
 
 		$form = new MB45_Change_Appointment_Form_Loader( $product );
-		$id = rand( 3200, 99999 );
-		_e( '<label>When?</label>', 'odin' );
-		printf( __( '<a href="#" class="btn show-options-btn" data-show="false" data-id="#show-%s">Choose a date</a>', 'odin' ), $id );
-		printf( '<div id="show-%s" class="col-md-12 show-options" style="display:none;">', $id );
-			$form->output();
-		echo '</div>';
+		$form->scripts();
 		echo '<div class="custom-fields-temp" style="display:none;">';
-			$GLOBALS['Product_Addon_Display']->display();
+			$form->output();
 		echo '</div>';
 		wp_die();
 	}
@@ -70,9 +65,6 @@ class MB45_Appointment_Form {
 		$guests = intval( $_REQUEST[ 'guests-num' ] );
 		$guests++;
 		for ( $guest = 0; $guest < $guests; $guest++ ) {
-			if ( $guest > 0 && $_REQUEST[ 'selected' ][ $guest ] == 'false' ) {
-				continue;
-			}
 			// Empty global $_POST and then add each variable
 			$_POST = array();
 			foreach ( $_REQUEST as $key => $value ) {

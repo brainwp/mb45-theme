@@ -5,43 +5,39 @@
 */
 jQuery(document).ready(function($) {
 	$( 'select[name="guests-num"]' ).on( 'change', function( e ) {
+		console.log( 'q?')
 		var value = parseInt( $( this ).val(), 10 );
-		for (var i = 0; i < 3; i++ ) {
-			if ( i == 0 ) {
-				continue;
-			}
+		value++;
+		for (var i = 1; i < 4; i++ ) {
 			if ( i > value ) {
-				$( '#customer-' + i ).fadeOut( 2000 );
-				$( '#is-selected-' + i ).val( 'false' );
-			} else {
-				$( '#customer-' + i ).fadeIn( 2000 );
+				$( '.product-addon-service-' + i ).fadeOut( 500 );
+				$( '.product-addon-option-' + i ).fadeOut( 500 );
 				$( '#is-selected-' + i ).val( 'true' );
+			} else {
+				$( '.product-addon-service-' + i ).fadeIn( 500 );
+				$( '.product-addon-option-' + i ).fadeIn( 500 );
 			}
-
 		};
 	});
-
-	$( '.product-id-select' ).on( 'change', function( e ){
+	$(window).load( function() {
 		console.log( 'check it' );
-		if ( $( this ).val() == '' ) {
-			return;
-		}
+		$elem = $( '#customer-0' );
 		var product_select_data = {
 			action: 'mb45_appointment_form',
-			product_id: $( this ).val()
+			product_id: $( 'input[name="appointment-product"]' ).val()
 		};
-		var guest_num = $( this ).attr( 'data-num');
+		var guest_num = 0;
 		var ajax = $.ajax({
 			url: odin.ajaxurl,
 			type: 'GET',
 			data: product_select_data
 		});
+		console.log( product_select_data );
 		ajax.done( function( data, textStatus, request ){
 			wc_appointment_form_params = JSON.parse( request.getResponseHeader( 'json-string' ) );
 			$( '#appointment-fields-' + guest_num ).html( data );
 			var cf_html = $( '#appointment-fields-' + guest_num ).find( '.custom-fields-temp').html();
 			$( '#appointment-fields-' + guest_num ).find( '.custom-fields-temp').remove();
-			$( '#appointment-custom-fields-' + guest_num ).html( cf_html );
 
 	var startDate,
 		endDate,
@@ -417,8 +413,9 @@ jQuery(document).ready(function($) {
 			return false;
 		},
 		show_available_time_slots: function( e ) {
-			var cart_form		= $( '#appointment-fields-' + guest_num );
+			var cart_form		= $( '#customer-0' );
 			var slot_picker     = cart_form.find('.slot-picker');
+			console.log( slot_picker.html() );
 			var fieldset        = cart_form.find('fieldset');
 			var year  = parseInt( fieldset.find( 'input.appointment_date_year' ).val(), 10 );
 			var month = parseInt( fieldset.find( 'input.appointment_date_month' ).val(), 10 );
@@ -461,26 +458,6 @@ jQuery(document).ready(function($) {
 
 	});
 
-	$( '#page-appointment' ).on( 'submit', function( e ){
-		$( '.each-customer' ).each( function(){
-			$each_customer = $( this );
-			var customer_num = $each_customer.data( 'customer' );
-			var field_selector = '#appointment-fields-' + customer_num;
-			var selector = field_selector + ' select, '
-				+ field_selector + ' input, '
-				+ field_selector + ' textarea, '
-				+ field_selector + ' radio, '
-				+ field_selector + ' checkbox, '
-				+ field_selector + ' color, '
-				+ field_selector + ' file, '
-				+ field_selector + ' range';
-			$( selector ).each( function() {
-				var name = $( this ).attr( 'name' ) + '[' + customer_num + ']';
-				$( this ).attr( 'name', name );
-				console.log( $( this ).attr( 'name' ) );
-			});
-		});
-	});
 	$( 'body' ).on( 'click', '.show-options-btn', function(e){
 		e.preventDefault();
 
@@ -490,8 +467,33 @@ jQuery(document).ready(function($) {
 			$element.fadeIn( 'slow' );
 			$( this ).attr( 'data-show', 'true' );
 		} else {
-			$element.fadeOut( 'slow' );
+			$element.fadeOut( 'slow', function() {
+				$element.find( '.form-field-wide').hide();
+				$element.find( 'fieldset').show();
+			});
 			$( this ).attr( 'data-show', false );
 		}
 	});
+	$( 'body' ).on( 'change', '[name="wc_appointments_field_start_date_day"]', function( e ) {
+		console.log( $( this ).val() );
+		var $options_elem = $( this ).closest( '.show-options' );
+		$options_elem.find( 'fieldset' ).fadeOut( 'slow' );
+		$options_elem.find( '.form-field-wide' ).fadeIn( 'slow' );
+		var $button = $options_elem.closest( '.appointment-date-fields' ).children( '.show-options-btn');
+		var button_default = $button.html();
+		$button.html( wc_appointment_form_params.chooseTime );
+	});
+	$( 'body' ).on( 'change', '[name="wc_appointments_field_start_date_time"]', function( e ) {
+		var $fields = $( '.wc-appointments-date-picker-date-fields' );
+		var $button = $( '.show-options-btn' );
+		var date_string = wc_appointment_form_params.selectedText;
+		date_string = date_string.replace( 'MM', $fields.find( '[name="wc_appointments_field_start_date_month"]' ).val() );
+		date_string = date_string.replace( 'DD', $fields.find( '[name="wc_appointments_field_start_date_day"]' ).val() );
+		date_string = date_string.replace( 'AAAA', $fields.find( '[name="wc_appointments_field_start_date_year"]' ).val() );
+		date_string = date_string.replace( 'HOUR', $( this ).val() );
+
+		$button.html( date_string );
+		$button.trigger( 'click' );
+		console.log( date_string );
+	} );
 });
