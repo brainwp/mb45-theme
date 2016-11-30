@@ -5,17 +5,18 @@
 */
 jQuery(document).ready(function($) {
 	$( 'select[name="guests-num"]' ).on( 'change', function( e ) {
+		console.log( 'q?')
 		var value = parseInt( $( this ).val(), 10 );
 		value++;
 		for (var i = 1; i < 4; i++ ) {
 			if ( i > value ) {
 				$( '.product-addon-service-' + i ).fadeOut( 500 );
 				$( '.product-addon-option-' + i ).fadeOut( 500 );
+				$( '#is-selected-' + i ).val( 'true' );
 			} else {
 				$( '.product-addon-service-' + i ).fadeIn( 500 );
 				$( '.product-addon-option-' + i ).fadeIn( 500 );
 			}
-
 		};
 	});
 	$(window).load( function() {
@@ -37,7 +38,6 @@ jQuery(document).ready(function($) {
 			$( '#appointment-fields-' + guest_num ).html( data );
 			var cf_html = $( '#appointment-fields-' + guest_num ).find( '.custom-fields-temp').html();
 			$( '#appointment-fields-' + guest_num ).find( '.custom-fields-temp').remove();
-			$( '#appointment-custom-fields-' + guest_num ).html( cf_html );
 
 	var startDate,
 		endDate,
@@ -458,26 +458,6 @@ jQuery(document).ready(function($) {
 
 	});
 
-	$( '#page-appointment' ).on( 'submit', function( e ){
-		$( '.each-customer' ).each( function(){
-			$each_customer = $( this );
-			var customer_num = $each_customer.data( 'customer' );
-			var field_selector = '#appointment-fields-' + customer_num;
-			var selector = field_selector + ' select, '
-				+ field_selector + ' input, '
-				+ field_selector + ' textarea, '
-				+ field_selector + ' radio, '
-				+ field_selector + ' checkbox, '
-				+ field_selector + ' color, '
-				+ field_selector + ' file, '
-				+ field_selector + ' range';
-			$( selector ).each( function() {
-				var name = $( this ).attr( 'name' ) + '[' + customer_num + ']';
-				$( this ).attr( 'name', name );
-				console.log( $( this ).attr( 'name' ) );
-			});
-		});
-	});
 	$( 'body' ).on( 'click', '.show-options-btn', function(e){
 		e.preventDefault();
 

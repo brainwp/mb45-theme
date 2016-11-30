@@ -33,6 +33,7 @@ class MB45_Appointment_Form {
 		$form = new MB45_Change_Appointment_Form_Loader( $product );
 		$form->scripts();
 		echo '<div class="custom-fields-temp" style="display:none;">';
+			$form->output();
 		echo '</div>';
 		wp_die();
 	}
@@ -64,9 +65,6 @@ class MB45_Appointment_Form {
 		$guests = intval( $_REQUEST[ 'guests-num' ] );
 		$guests++;
 		for ( $guest = 0; $guest < $guests; $guest++ ) {
-			if ( $guest > 0 && $_REQUEST[ 'selected' ][ $guest ] == 'false' ) {
-				continue;
-			}
 			// Empty global $_POST and then add each variable
 			$_POST = array();
 			foreach ( $_REQUEST as $key => $value ) {

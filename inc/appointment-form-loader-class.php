@@ -41,6 +41,8 @@ class MB45_Change_Appointment_Form_Loader extends WC_Appointment_Form {
 			'selectedText'					=> __( 'MM/DD/AAAA HOUR', 'odin' )
 		);
 		$json_params = json_encode( $appointment_form_params );
-		header( 'json-string: ' . $json_params );
+		if ( defined('DOING_AJAX') && DOING_AJAX ) {
+			header( 'json-string: ' . $json_params );
+		}
 	}
 }
