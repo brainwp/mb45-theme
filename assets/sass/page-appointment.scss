@@ -87,7 +87,9 @@
 	   text-transform: uppercase;
 	   width: 100%;
 	}
-
+	.addon-name {
+		display: none;
+	}
 	.select-area{
 	    overflow: hidden;
 	    background: url(../images/arrow.png) no-repeat right #fff;
@@ -125,6 +127,19 @@
 			border:1px solid $cor-txt-post;
 			display: none;
 		}
+	}
+	.product-addon {
+		width:45%;
+		float:left;
+		height:85px;
+		display: none;
+		@media screen and ( max-width:700px ) {
+			width:100%;
+		}
+	}
+	.product-addon:first-child,
+	.product-addon:nth-child(2) {
+		display: block !important;
 	}
  }
 

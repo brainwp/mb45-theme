@@ -6,16 +6,14 @@
 jQuery(document).ready(function($) {
 	$( 'select[name="guests-num"]' ).on( 'change', function( e ) {
 		var value = parseInt( $( this ).val(), 10 );
-		for (var i = 0; i < 3; i++ ) {
-			if ( i == 0 ) {
-				continue;
-			}
+		value++;
+		for (var i = 1; i < 4; i++ ) {
 			if ( i > value ) {
-				$( '#customer-' + i ).fadeOut( 500 );
-				$( '#is-selected-' + i ).val( 'false' );
+				$( '.product-addon-service-' + i ).fadeOut( 500 );
+				$( '.product-addon-option-' + i ).fadeOut( 500 );
 			} else {
-				$( '#customer-' + i ).fadeIn( 500 );
-				$( '#is-selected-' + i ).val( 'true' );
+				$( '.product-addon-service-' + i ).fadeIn( 500 );
+				$( '.product-addon-option-' + i ).fadeIn( 500 );
 			}
 
 		};

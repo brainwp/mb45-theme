@@ -117,7 +117,7 @@ get_header( 'shop' );
 <!-- CALENDAR -->
 				<?php endfor;?>
 			</div>
-			<div class="col-md-12 select-field appointment-date-fields">
+			<div class="col-md-8 select-field appointment-date-fields">
 				<?php $GLOBALS['Product_Addon_Display']->display();?>
 			</div>
 
