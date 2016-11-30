@@ -174,3 +174,52 @@ if(function_exists("register_field_group"))
 	}
 
 }
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_appointment-product',
+		'title' => 'Appointment Product',
+		'fields' => array (
+			array (
+				'key' => 'field_583c8668710db',
+				'label' => 'Select the appointment product',
+				'name' => 'appointment_product',
+				'type' => 'relationship',
+				'required' => 1,
+				'return_format' => 'object',
+				'post_type' => array (
+					0 => 'product',
+				),
+				'taxonomy' => array (
+					0 => 'all',
+				),
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'post_type',
+					1 => 'post_title',
+				),
+				'max' => 1,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-appointment.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'side',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
