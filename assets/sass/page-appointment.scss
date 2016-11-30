@@ -3,6 +3,12 @@
 		.col-md-4.control{
 			margin-top: 26px;
 		}
+		.col-md-6.pull-right.checkout-steps{
+			display: none;
+		}
+		.product-infos{
+			justify-content: inherit;
+		}
 	}
 	background-color: $cor-roxo;
 	.general-title{
