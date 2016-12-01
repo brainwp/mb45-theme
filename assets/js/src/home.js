@@ -47,6 +47,8 @@ jQuery(document).ready(function($) {
 	}
 
 	$('p.form-row').addClass('col-md-9');
+	$('.wc-appointments-date-picker').addClass('col-md-7 no-float no-padding');
+
 
 
 });

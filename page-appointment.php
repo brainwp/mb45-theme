@@ -99,7 +99,7 @@ get_header( 'shop' );
 							<div class="select-field col-md-12">
 								<?php _e( '<label>When?</label>', 'odin' );?>
 								<?php printf( __( '<div class="select-area col-md-7"><a href="#" class="btn show-options-btn col-md-12" data-show="false" data-id="#show-%s">Choose a date</a></div>', 'odin' ), $id );
-								printf( '<div id="show-%s" class="col-md-7 show-options" style="display:none;">', $id );
+								printf( '<div id="show-%s" class="col-md-12 show-options" style="display:none;">', $id );
 									$form->output();
 								echo '</div>';?>
 							</div>
