@@ -43,27 +43,35 @@ class MB45_Appointment_Form {
 	 */
 	private function validate_post_data() {
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_time'] ) ) {
+			var_dump( $_POST );
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_time'] ) ) {
+			echo '2';
 			return false;
 		}
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_year'] ) ) {
+			echo '3';
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_year'] ) ) {
+			echo '4';
 			return false;
 		}
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_month'] ) ) {
+			echo '5';
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_month'] ) ) {
+			echo '6';
 			return false;
 		}
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_day'] ) ) {
+			echo '7';
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_day'] ) ) {
+			echo '8';
 			return false;
 		}
 
@@ -96,21 +104,15 @@ class MB45_Appointment_Form {
 		// Make a backup of global $_POST var
 		$posted_data = $_POST;
 		$guests = intval( $_REQUEST[ 'guests-num' ] );
-		$guests++;
 		$has_notice = false;
-		for ( $guest = 0; $guest < 1; $guest++ ) {
-			// Empty global $_POST and then add each variable
-			$_POST = array();
-			foreach ( $_REQUEST as $key => $value ) {
-				if ( is_array( $_REQUEST[ $key ] ) && isset( $_REQUEST[ $key ][ $guest ] ) ) {
-					$_POST[ $key ] = $_REQUEST[ $key ][ $guest ];
-				}
-			}
-			if ( $this->validate_post_data() ) {
-				WC()->cart->add_to_cart( $_POST[ 'product_id'] );
-			} else {
-				wc_add_notice( __( 'The date is not filled in correctly', 'odin' ), 'error' );
-			}
+		if ( $this->validate_post_data() ) {
+			WC()->cart->add_to_cart( $_POST[ 'appointment-product'] );
+		} else {
+			$has_notice = true;
+			wc_add_notice( __( 'Date field has not been properly filled', 'odin' ), 'error' );
+		}
+		if ( $has_notice == false ) {
+			//wp_redirect( home_url( '/appointment/step-2' ) );
 		}
 		// Restore original $_POST;
 		$_POST = $posted_data;

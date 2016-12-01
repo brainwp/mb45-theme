@@ -474,6 +474,13 @@ jQuery(document).ready(function($) {
 			$( this ).attr( 'data-show', false );
 		}
 	});
+	$( '#page-appointment' ).on( 'submit', function( e ) {
+		if ( $( 'input[name="add-to-cart"]' ).length > 0 ) {
+			$( 'input[name="add-to-cart"]' ).each( function() {
+				$( this ).remove();
+			});
+		}
+	});
 	$( 'body' ).on( 'change', '[name="wc_appointments_field_start_date_day"]', function( e ) {
 		console.log( $( this ).val() );
 		var $options_elem = $( this ).closest( '.show-options' );
