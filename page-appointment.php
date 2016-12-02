@@ -25,7 +25,7 @@ get_header( 'shop' );
 					</div>
 					<div class="col-md-6 pull-right checkout-steps">
 						<?php for ( $i = 1; $i < 4; $i++ ) : ?>
-							<span class="each-step <?php echo is_current_step( $i );?>">
+							<span class="each-step <?php echo is_current_step( $i );?>" data-step="<?php $i;?>">
 								<?php printf( __( 'Step %s', 'odin' ), $i );?>
 							</span>
 						<?php endfor;?>
@@ -35,8 +35,8 @@ get_header( 'shop' );
 
 
 			<div class="product-description col-md-3">
-					<?php the_content();?>
-					<?php wc_print_notices();?>
+				<?php the_content();?>
+				<?php wc_print_notices();?>
 			</div>
 
 		</section>
@@ -125,8 +125,6 @@ get_header( 'shop' );
 				<input type="submit" value="<?php _e( 'Next', 'odin' );?>" class="primary nxt-step col-md-8 pull-right" id="send-step-1">
 			</div>
 		</form>
-		</div>
-
 		<!-- END: GENERAL FORM -->
 
 	<?php
