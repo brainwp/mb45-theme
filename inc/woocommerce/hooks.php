@@ -57,3 +57,18 @@ add_filter( 'loop_shop_per_page', 						'odin_products_per_page' );
 add_filter( 'loop_shop_columns', 						'odin_loop_columns' );
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+
+/**
+ * Remove cart item by $_GET param
+ * @return null
+ */
+function mb45_remove_cart_item() {
+	if ( isset( $_GET[ 'wc_remove_item'] ) ) {
+		WC()->cart->remove_cart_item( $_GET[ 'wc_remove_item'] );
+		// if cart is empty after remove item, back to home page
+		if ( WC()->cart->get_cart_contents_count() == 0 ) {
+			wp_redirect( home_url() );
+		}
+	}
+}
+add_action( 'get_header', 'mb45_remove_cart_item' );

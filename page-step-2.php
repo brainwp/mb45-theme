@@ -46,6 +46,7 @@ get_header( 'shop' );
 			<?php the_content();?>
 		</div><!-- .col-md-12 wc-content -->
 		<div class="col-md-4 pull-right mini-cart woocommerce-checkout-review-order">
+			<h3><?php _e( 'Booking Summary', 'odin' );?></h3>
 			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
 			<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
