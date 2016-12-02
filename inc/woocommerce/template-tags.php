@@ -78,7 +78,10 @@ if ( ! function_exists( 'odin_header_cart' ) ) {
  * @return string
  */
 function is_current_step( $current ) {
-	if ( $current == 1 && is_singular( 'product' ) ) {
+	if ( $current == 1 && is_page_template( 'page-appointment.php' ) ) {
+		return 'current';
+	}
+	if ( $current == 2 && is_checkout() ) {
 		return 'current';
 	}
 }

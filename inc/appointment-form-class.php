@@ -112,7 +112,7 @@ class MB45_Appointment_Form {
 			wc_add_notice( __( 'Date field has not been properly filled', 'odin' ), 'error' );
 		}
 		if ( $has_notice == false ) {
-			//wp_redirect( home_url( '/appointment/step-2' ) );
+			wp_redirect( home_url( '/appointment/step-2' ) );
 		}
 		// Restore original $_POST;
 		$_POST = $posted_data;

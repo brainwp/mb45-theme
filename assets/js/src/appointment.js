@@ -4,6 +4,9 @@
  *
 */
 jQuery(document).ready(function($) {
+	if ( ! $( 'body').hasClass( 'page-template-page-appointment' ) ) {
+		return;
+	}
 	$( 'select[name="guests-num"]' ).on( 'change', function( e ) {
 		console.log( 'q?')
 		var value = parseInt( $( this ).val(), 10 );
@@ -503,4 +506,5 @@ jQuery(document).ready(function($) {
 		$button.trigger( 'click' );
 		console.log( date_string );
 	} );
+
 });
