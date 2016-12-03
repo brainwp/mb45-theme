@@ -24,6 +24,8 @@ jQuery(document).ready(function($) {
 					$( '#step-3').fadeIn( 'slow' );
 				});
 			}
+		} else {
+			$( 'form.woocommerce-checkout' ).submit();
 		}
 	});
 	$( 'body' ).on( 'click', 'a.back-button', function( e ) {

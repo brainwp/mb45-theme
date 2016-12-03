@@ -21,6 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <li class="wc_payment_method payment_method_<?php echo $gateway->id; ?>">
+	<input id="payment_method_<?php echo $gateway->id; ?>" type="hidden" name="payment_method" value="<?php echo esc_attr( $gateway->id ); ?>" />
+
 	<label for="payment_method_<?php echo $gateway->id; ?>">
 		<?php echo $gateway->get_title(); ?> <?php echo $gateway->get_icon(); ?>
 	</label>
