@@ -36,10 +36,10 @@
 	background-color: $cor-roxo;
 	.general-title{
 		font-family: $familia-padrao;
-    	font-weight: bold;
-    	font-size: 2.15em;
+    	font-weight: 600;
+    	font-size: 2em;
     	text-transform: uppercase;
-    	letter-spacing: 3px;
+    	letter-spacing: 2px;
 	}
 	a.btn.show-options-btn.col-md-12 {
 	    background: none;
@@ -55,7 +55,7 @@
 	}
 	.addon-description {
     	text-transform: uppercase;
-    	font-size: 1.1em;
+    	font-size: 1em;
     	font-weight: 600;
 	}
 	.addon-description p {
@@ -214,7 +214,7 @@
 	    font-family: $familia-padrao;
 	    font-weight: 600;
 	    text-transform: uppercase;
-	    font-size: 1.1em;
+	    font-size: 1em;
 	}
 
 	.select-guest {
