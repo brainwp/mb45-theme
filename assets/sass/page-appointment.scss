@@ -341,6 +341,9 @@
 	    padding: 0px;
 	    font-size: 0.89em;
 	}
+	.woocommerce form .form-row.woocommerce-validated .select2-container, .woocommerce form .form-row.woocommerce-validated input.input-text, .woocommerce form .form-row.woocommerce-validated select {
+    border-color: white;
+	}
 	.addon-description {
     	text-transform: uppercase;
     	font-size: 1em;
@@ -370,13 +373,16 @@
 	}
 	.selectric{
 		border-color: #33135e!Important;
-		background: none!Important;
+		background: none;
 		border-left: 0px;
 	    border-right: 0px;
 
 	}
 	.selectric .button{
 		display: none!Important;
+	}
+	#billing_state_field .selectric{
+		background: #eee!Important;
 	}
 	.product-addon-option-1, .product-addon-option-2, .product-addon-option-3, .product-addon-option-4{
 		p.form-row.form-row-wide{

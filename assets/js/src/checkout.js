@@ -35,6 +35,8 @@ jQuery(document).ready(function($) {
 		if ( $button.attr( 'data-current' ) == '3' ) {
 
 			$( '#step-3' ).fadeOut( 'slow', function() {
+				$('.step-3').removeClass('current');
+				$('.step-2').addClass('current');
 				$( '#step-2').fadeIn( 'slow' );
 			});
 			$button.html( $button.attr( 'data-step2' ) );
