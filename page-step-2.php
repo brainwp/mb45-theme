@@ -7,6 +7,10 @@
  * @since 2.2.0
  */
 get_header( 'shop' );
+$wc_content_col = 'col-md-7 wc-content';
+if ( is_wc_endpoint_url( 'order-received' ) ) {
+	$wc_content_col = 'col-md-12 wc-content';
+}
 ?>
 <div class="container-fluid">
 	<?php while( have_posts() ) : the_post(); ?>
@@ -39,21 +43,24 @@ get_header( 'shop' );
 			</div>
 
 		</section>
-		<div class="col-md-7 wc-content">
+
+		<div class="<?php echo $wc_content_col;?>">
 			<a href="#" class="col-md-12 back-button" style="display:none;">
 				<?php _e( '< Back', 'odin' );?>
 			</a>
 			<?php the_content();?>
 		</div><!-- .col-md-12 wc-content -->
-		<div class="col-md-4 pull-right mini-cart woocommerce-checkout-review-order">
-			<h3><?php _e( 'Booking Summary', 'odin' );?></h3>
-			<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-			<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-			<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-			<a href="#" class="submit-checkout" data-step2="<?php esc_attr_e( 'Make Payment', 'odin' );?>" data-step3="<?php esc_attr_e( 'Confirm', 'odin' );?>" data-current="2">
-				<?php _e( 'Make Payment', 'odin' );?>
-			</a>
-		</div><!-- .col-md-4 pull-right mini-cart -->
+		<?php if ( ! is_wc_endpoint_url( 'order-received' ) ) : ?>
+			<div class="col-md-4 pull-right mini-cart woocommerce-checkout-review-order">
+				<h3><?php _e( 'Booking Summary', 'odin' );?></h3>
+				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+				<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+				<a href="#" class="submit-checkout" data-step2="<?php esc_attr_e( 'Make Payment', 'odin' );?>" data-step3="<?php esc_attr_e( 'Confirm', 'odin' );?>" data-current="2">
+					<?php _e( 'Make Payment', 'odin' );?>
+				</a>
+			</div><!-- .col-md-4 pull-right mini-cart -->
+		<?php endif;?>
 		<!-- END: PAGE TITLE, INFORMATIONS -->
 
 	<?php
