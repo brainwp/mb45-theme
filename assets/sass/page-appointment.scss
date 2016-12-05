@@ -1,4 +1,289 @@
-.page-template-page-appointment,.single-product{
+.woocommerce-info{display: none;}
+.page-template-page-step-2{
+	background-color: #33135e;
+	span.book-summary {
+	    text-transform: uppercase;
+	    font-weight: bold;
+	    font-family: $familia-padrao;
+	    font-size: 1.35em;
+	    letter-spacing: 0.5px;
+	}
+	ul.wc_payment_methods.payment_methods.methods li {
+	    font-family: $familia-padrao;
+	    text-transform: uppercase;
+	    color: white;
+
+	}
+	ul.wc_payment_methods.payment_methods.methods li div {
+    	background: none!important;
+    	color: white!important;
+    	padding-left: 0px!important;
+    	padding-right: 0px!important;
+	}
+	ul.wc_payment_methods.payment_methods.methods li div:before{
+		display: none!Important;
+	}
+	p.form-row.form-row-wide {
+    	/*margin-bottom: 23px!Important;
+    	padding-top: 30px;*/
+	}
+	td.product-name {
+	    font-family: $familia-padrao;
+	    padding-top: 7px;
+	    font-style: italic;
+	    font-size: 1.19em;
+	    text-transform: uppercase;
+	}
+	a.remove-item {
+	    color: #f68c8a;
+	    font-style: normal;
+	    font-weight: bold;
+	    font-size: 0.7em;
+	    display: inline-block;
+	    font-family: $familia-padrao;
+	    padding-left: 8px;
+	}
+	tr.cart-subtotal {
+    	border-top: 1px solid;
+    	line-height: 50px;
+	}
+	tfoot {
+	    text-transform: uppercase;
+	    font-size: 1.19em;
+	    font-family: $familia-padrao;
+	    line-height: 38px;
+	}
+	tr.order-total {
+    	border-top: 1px solid;
+    	line-height: 60px;
+	}
+	td.product-total {
+	    font-family: $familia-padrao;
+	    font-size: 1.2em;
+	    font-style: italic;
+	}
+	dl.variation {
+    	margin-top: 12px;
+	}
+	table.shop_table.woocommerce-checkout-review-order-table {
+    	width: 100%;
+	}
+	.woocommerce-shipping-fields h3 {
+	    font-size: 1.3em;
+	    text-transform: uppercase;
+	    font-weight: bold;
+	    margin-top: 30px;
+	    letter-spacing: 3px;
+	}
+	.product-infos .checkout-steps{padding: 0px;}
+	.woocommerce-shipping-fields p {
+    	padding: 0px!important;
+	}
+	a.col-md-12.back-button {
+	    display: inline-block;
+	    padding-left: 0px;
+	    font-size: 0.44em;
+	    color: #fff;
+	    text-transform: uppercase;
+	    font-weight: normal;
+	    margin-bottom: 15px;
+	}
+	div#payment {
+    	margin-top: 36px;
+    	background: none!Important;
+	}
+	#payment label img {
+    	height: 23px!Important;
+    	float: right;
+	}
+	ul.wc_payment_methods.payment_methods.methods {
+    	padding-left: 0px!Important;
+    	padding-right: 0px!Important;
+	}
+	div#payment ul li label {
+    	font-size: 2.3em;
+    	font-weight: normal;
+    	line-height: 21px;
+	}
+	ul.wc_payment_methods.payment_methods.methods {
+    	border: 0px!important;
+	}
+	.woocommerce #payment .form-row select, .woocommerce-page #payment .form-row select{
+		width: 49%;
+	    font-size: 1.3em;
+	    padding-top: 8px;
+	    padding-bottom: 8px;
+	}
+	div#payment {
+	    border-top: 3px solid white;
+	    border-radius: 0px!important;
+	}
+	label[for="cc-expire-month"] span {
+    	margin-left: 0px!Important;
+	}
+	#payment p select {
+	    border-radius: 0px;
+	    border: 0px;
+	    text-transform: uppercase;
+	}
+	#payment ul li div p label {
+    	font-size: 1.3em;
+	}
+	a.submit-checkout.col-md-9 {
+	    font-family: $familia-padrao;
+	    text-transform: uppercase;
+	    font-size: 1.13em;
+	    background: #F87B7D;
+	    padding: 14px;
+	    line-height: 1.4!Important;
+	    margin-top: 19px;
+	    text-align: center;
+	    color: white;
+	    margin-bottom: 19px;
+	    transition: all ease-in 230ms;
+	}
+	a.submit-checkout:hover{
+		text-decoration: none !Important;
+		background: #ff807e;
+		transition: all ease-in 230ms;
+	}
+	#header{
+		position: inherit;
+	}
+	.woocommerce form .form-row.woocommerce-invalid label {
+    	color: #a00;
+	}
+	.mini-cart{
+	    display: flex;
+    	justify-content: flex-end;
+    	align-content: flex-end;
+		margin-top: 35px;
+		flex-flow: column;
+		align-items: flex-end;
+	}
+	.cart-e {
+    	background: #eee;
+    	padding: 21px;
+	}
+	.woocommerce-billing-fields {
+    	margin-top: 30px;
+	}
+	p#billing_phone_field, p#billing_email_field {
+	    margin-top: 30px;
+	}
+	p#order_comments_field {
+    	width: 100%;
+	}
+	textarea#order_comments {
+    	padding: 10px;
+    	width: 100%;
+	}
+	input[type="tel"] {
+	    float: none;
+	    display: block;
+	    background: none;
+	    border: none;
+	    border-bottom: 0.1px solid white;
+	    color: white;
+	    width: 100%;
+	}
+	@media (max-width: 1000px){
+		p#billing_address_2_field {
+			width: 100%!important;
+			margin-top: 0px!important;
+
+		}
+	}
+	p#billing_country_field {
+    	margin-top: 30px;
+ 	   width: 100%;
+	}
+	p#billing_address_2_field {
+    	clear: right;
+    	margin-top: 34px;
+    	width: 25%;
+	}
+	.general-title{
+		font-family: $familia-padrao;
+    	font-weight: 600;
+    	font-size: 2em;
+    	text-transform: uppercase;
+    	letter-spacing: 2px;
+	}
+	.select2-container .select2-choice {
+	    border-radius: 0px;
+	    border: none;
+	    height: 43px;
+	    line-height: 43px;
+	    padding-left: 17px;
+	    font-family: $familia-padrao;
+    	background-color: #fafafa;
+	}
+	p#billing_city_field {
+    	margin-top: 30px;
+    	width: 100%;
+	}
+	p.form-row label {
+	    text-transform: uppercase;
+	    font-weight: normal;
+	    font-size: 1.17em;
+	}
+	.woocommerce form .form-row .required {
+	    color: white;
+	    font-weight: normal;
+	    border: 0;
+	    font-size: 0.9em;
+	    margin-left: -5px;
+	}
+	p.form-row {
+    	color: #fefefe!important;
+	}
+	p.form-row input {
+    	padding-bottom: 4px;
+    	font-size: 1.3em;
+    	font-style: italic;
+    	color: #fefefe;
+	}
+}
+
+@media (max-width: 991px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+}
+
+.page-template-page-appointment,.single-product, .page-template-page-step-2{
 	@media all and (max-width: 768px) {
 		.col-md-4.control{
 			margin-top: 26px;

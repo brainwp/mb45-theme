@@ -410,7 +410,30 @@ add_action( 'init', 'remove_admin_bar_on_dev', 9999 );
  * @param boolean $show
  * @return boolean
  */
+
 function show_widget_cart_on_checkout( $show ) {
 	return true;
 }
 add_filter( 'woocommerce_widget_cart_is_hidden', 'show_widget_cart_on_checkout' );
+
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_billing_fields' );
+
+
+
+function custom_billing_fields( $fields )  {
+	$fields['billing']['billing_company']['placeholder'] = 'Company';
+	$fields['billing']['billing_first_name']['placeholder'] = 'First Name';
+	$fields['billing']['billing_last_name']['placeholder'] = 'Last Name';
+	$fields['billing']['billing_email']['placeholder'] = 'Email';
+	$fields['billing']['billing_phone']['placeholder'] = 'Phone';
+	$fields['billing']['billing_address_1']['placeholder'] = 'Street';
+	$fields['billing']['billing_address_2']['placeholder'] = 'Number';
+	$fields['billing']['billing_postcode']['placeholder'] = 'Postcode';
+	$fields['billing']['billing_city']['placeholder'] = 'City';
+	unset($fields['billing']['billing_company']);
+
+
+	return $fields;
+}
+
