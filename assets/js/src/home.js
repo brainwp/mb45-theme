@@ -4,6 +4,10 @@ jQuery(document).ready(function($) {
 		$('.header').toggleClass('backgroundMenu', 1000);
 		$('.navbar-toggle').toggleClass('activeButtom', 1000);
 	});
+	$('select').selectric({
+		inheritOriginalWidth: false,
+	});
+
 	$('#fullpage').fullpage({
 		menu: '#header',
 		navigation: true,

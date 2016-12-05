@@ -349,7 +349,7 @@
 	}
 	.required-product-addon, .product-addon-service-2, .product-addon-service-3,.product-addon-service-4{
 		p.form-row.form-row-wide{
-			    overflow: hidden;
+			    /*overflow: hidden;*/
 			    background: url(../images/arrow.png) no-repeat right #EEE;
 			    margin: 0px;
 			    padding: 0px;
@@ -360,7 +360,20 @@
 			    background-size: 23px;
 		}
 	}
+	.selectric-scroll ul li {
+	    font-weight: bold;
+	    color: #000!important;
+	}
+	.selectric{
+		border-color: #33135e!Important;
+		background: none!Important;
+		border-left: 0px;
+	    border-right: 0px;
 
+	}
+	.selectric .button{
+		display: none!Important;
+	}
 	.product-addon-option-1, .product-addon-option-2, .product-addon-option-3, .product-addon-option-4{
 		p.form-row.form-row-wide{
 			padding-left: 43px;
@@ -519,7 +532,7 @@
 		display: none;
 	}
 	.select-area{
-	    overflow: hidden;
+	    /*overflow: hidden;*/
 	    background: url(../images/arrow.png) no-repeat right #EEE;
 	    background-size: 23px;
      	margin: 0px;
@@ -531,6 +544,26 @@
 	.col-md-4.tes {
     	padding: 0px;
     	margin-top: 27px;
+	}
+	.selectric-items {
+    	text-transform: uppercase;
+    	padding-left: 7px;
+	}
+	.selectric-items ul, .selectric-items li {
+    	font-size: 1em;
+    	background: none!Important;
+    	letter-spacing: 0px;
+	}
+	.selectric span.label {
+	    text-align: left;
+	    font-family: Gotham!important;
+	    text-transform: uppercase;
+	    font-weight: normal;
+	    font-size: 1.1em!important;
+	    height: 42px!important;
+	}
+	.selectric-items {
+    	background: #eee;
 	}
 	.nxt-step{
 		background: #f87b79;
@@ -603,4 +636,13 @@
 	}
 
 
+}
+@media (max-width:991px){
+	.page-template-page-step-2 .mini-cart{
+		align-items: initial;
+	}
+
+	.product-infos{
+		justify-content: initial;
+	}
 }
