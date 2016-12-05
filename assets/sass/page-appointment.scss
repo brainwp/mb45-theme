@@ -328,11 +328,14 @@
 	}
 	a.btn.show-options-btn.col-md-12 {
 	    background: none;
-	    height: 46px;
+	    height: 42px;
 	    display: flex;
 	    padding-left: 25px;
 	    align-items: center;
 	    font-size: 1.1em;
+	}
+	.product-infos .checkout-steps span.current {
+    	font-weight: 600;
 	}
 	.col-md-7.show-options {
 	    padding: 0px;
@@ -354,6 +357,7 @@
 			    margin: 0px;
 			    padding: 0px;
 			    display: block;
+
 			    background-repeat: no-repeat!important;
 			    background-color: #EEE!Important;
 			    background-position-x: right;

@@ -22,6 +22,7 @@ jQuery(document).ready(function($) {
 				$( 'a.back-button' ).fadeIn( 'slow' );
 				$( '#step-2' ).fadeOut( 'slow', function() {
 					$( '#step-3').fadeIn( 'slow' );
+					$('.step-3').addClass('current');
 				});
 			}
 		} else {
@@ -32,6 +33,7 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 		$button = $( 'a.submit-checkout' );
 		if ( $button.attr( 'data-current' ) == '3' ) {
+
 			$( '#step-3' ).fadeOut( 'slow', function() {
 				$( '#step-2').fadeIn( 'slow' );
 			});

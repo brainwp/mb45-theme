@@ -32,7 +32,7 @@ if ( is_wc_endpoint_url( 'order-received' ) ) {
 					</div>
 					<div class="col-md-6 pull-right checkout-steps">
 						<?php for ( $i = 1; $i < 4; $i++ ) : ?>
-							<span class="each-step <?php echo is_current_step( $i );?>" data-step="<?php $i;?>">
+							<span class="each-step <?php echo is_current_step( $i ); echo " step-$i";?> " data-step="<?php $i;?>">
 								<?php printf( __( 'Step %s', 'odin' ), $i );?>
 							</span>
 						<?php endfor;?>
