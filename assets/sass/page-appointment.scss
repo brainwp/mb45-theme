@@ -247,6 +247,7 @@
 }
 
 @media (max-width: 991px) {
+
   .navbar-header {
       float: none;
   }
@@ -279,7 +280,14 @@
       padding-bottom: 10px;
   }
   .collapse.in{
-      display:block !important;
+		display:block !important;
+  }
+  ul.slot_column{
+		width: 100%!important;
+  }
+  .page-template-page-appointment .nxt-step, .single-product .nxt-step, .page-template-page-step-2 .nxt-step{
+	  	width: 100%;
+	    margin-bottom: 35px;
   }
 }
 
