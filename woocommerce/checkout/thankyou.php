@@ -43,10 +43,10 @@ if ( $order ) : ?>
 		<p class="woocommerce-thankyou-order-received">
 			<?php _e( 'Your appointment is booked and your confirmation emails is on its way.', 'odin' );?>
 		</p>
-		<p class="woocommerce-thankyou-order-received">
+		<p class="woocommerce-thankyou-order-received col-md-10">
 			<?php printf( __( 'Please make sure to arrive on time. If you have any questions please check out on our <a href="%s">FAQs</a> or give us a call.', 'odin' ), home_url( '/faq' ) );?>
 		</p>
-		<p class="woocommerce-thankyou-order-received">
+		<p class="woocommerce-thankyou-order-received col-md-12">
 			<?php printf( __( 'To see your appointment history <a href="%s">Login</a> or <a href="%s">Create Account</a>', 'odin' ), get_permalink( get_option('woocommerce_myaccount_page_id') ), get_permalink( get_option('woocommerce_myaccount_page_id') ) );?>
 		</p>
 

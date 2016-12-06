@@ -1,0 +1,30 @@
+.woocommerce-order-received{
+	.entry-header{
+		display: none;
+	}
+	.line{
+		border: 0px;
+		padding: 0px;
+	}
+	h1.page-title {
+	    text-transform: uppercase;
+	    font-size: 1.1em;
+	    padding-bottom: 15px;
+	}
+	p.woocommerce-thankyou-order-received {
+   		font-size: 0.9em;
+    	line-height: 33px;
+	}
+	.woocommerce {
+	    display: flex;
+	    flex-flow: column;
+	    align-items: center;
+	}
+	p.woocommerce-thankyou-order-received.col-md-10 {
+    	line-height: 24px;
+	}
+	p.woocommerce-thankyou-order-received a{
+		color: white;
+		text-decoration: underline;
+	}
+}
