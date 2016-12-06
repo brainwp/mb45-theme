@@ -1,5 +1,21 @@
 .woocommerce-info{display: none;}
+
+.logged-in .col-2{
+	margin-top: 0px!important;
+}
+
 .page-template-page-step-2{
+	p#account_password_field {
+    	width: 100%;
+	}
+	div#step-2 {
+    	margin-bottom: 25px;
+	}
+	.col-2 {
+	    width: 100%!important;
+	    margin-top: 54px;
+	    display: block;
+	}
 	background-color: #33135e;
 	span.book-summary {
 	    text-transform: uppercase;
