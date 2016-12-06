@@ -8,6 +8,9 @@
 	    font-size: 1.35em;
 	    letter-spacing: 0.5px;
 	}
+	.form-row.place-order {
+    	display: none;
+	}
 	ul.wc_payment_methods.payment_methods.methods li {
 	    font-family: $familia-padrao;
 	    text-transform: uppercase;
@@ -187,6 +190,15 @@
 	    color: white;
 	    width: 100%;
 	}
+	input[type="password"] {
+	    float: none;
+	    display: block;
+	    background: none;
+	    border: none;
+	    border-bottom: 0.1px solid white;
+	    color: white;
+	    width: 100%;
+	}
 	@media (max-width: 1000px){
 		p#billing_address_2_field {
 			width: 100%!important;
@@ -289,6 +301,16 @@
 	  	width: 100%;
 	    margin-bottom: 35px;
   }
+  .woocommerce-billing-fields p {
+    	width: 100%!important;
+	}
+
+	.page-template-page-step-2 a.col-md-12.back-button{
+		    display: block!important;
+	}
+	.checkout-steps{
+		display: none!important;
+	}
 }
 
 .page-template-page-appointment,.single-product, .page-template-page-step-2{
