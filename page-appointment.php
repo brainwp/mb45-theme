@@ -130,4 +130,4 @@ get_header( 'shop' );
 	<?php
 	endwhile; ?>
 </div>
-	<?php get_footer( 'shop' );
+	<?php  get_footer( 'shop' );
