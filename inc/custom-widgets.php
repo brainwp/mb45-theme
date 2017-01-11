@@ -3,7 +3,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-
+if ( class_exists( 'WC_Widget' ) ) :
 /**
  * Shopping Cart Widget.
  *
@@ -63,7 +63,7 @@ class WC_Widget_Checkout extends WC_Widget {
 		$this->widget_end( $args );
 	}
 }
-
+endif;
 /**
  * Register widgets
  */
