@@ -27,9 +27,22 @@ get_header(); ?>
 			<?php $style = sprintf( 'background-image:url(%s);', get_the_post_thumbnail_url( get_the_ID(), 'full') );?>
 		<?php endif;?>
 		<?php $class = 'color-white';?>
-		<?php if ( $value = get_post_meta( get_the_ID(), 'text_color', true ) ) : ?>
-			<?php $class = sprintf( 'color-%s', esc_attr( strtolower( $value ) ) );?>
-		<?php endif;?>
+		<?php
+			if ( $value = get_post_meta( get_the_ID(), 'text_color', true ) ) {
+				$class = sprintf( 'color-%s', esc_attr( strtolower( $value ) ) );
+			}
+		?>
+
+		<?php if( get_field('color_mobile') ){
+				if ( $class == 'color-white'){
+					$class = 'mobile-color-black';
+				}else{
+					$class = 'mobile-color-white';
+				}
+			}
+		?>
+
+
 		<div class="section <?php echo $class;?>" style="<?php echo esc_attr( $style );?>">
 			<div class="container-fluid">
 				<div class="col-md-offset-1 col-md-5">
@@ -51,19 +64,32 @@ get_header(); ?>
 					</div>
 				<?php endif;?>
 
+
+
 			</div>
 			<?php if ( $value = get_post_meta( get_the_ID(), 'link_url', true ) ) : ?>
 				<a href="<?php echo esc_url( $value );?>" class="theButtomM hidden-lg-down">
 					<?php echo apply_filters( 'the_title', get_post_meta( get_the_ID(), 'link_text', true ) );?>
+
 				</a>
 			<?php endif;?>
 		</div>
+
+
+
 		<?php endwhile;?>
 		<?php wp_reset_postdata();?>
+
+
 	<?php endif;?>
+
+
+
 	<div class="section fp-auto-height">
 		<?php get_footer();?>
 	</div>
+
+
 
 </div>
 
