@@ -87,7 +87,7 @@ if(function_exists("register_field_group"))
 
 	register_field_group(array (
 		'id' => 'acf_home-options',
-		'title' => 'Home options',
+		'title' => 'Home Options',
 		'fields' => array (
 			array (
 				'key' => 'field_57fd72abc7a8e',
@@ -137,6 +137,14 @@ if(function_exists("register_field_group"))
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_587560e75a4d3',
+				'label' => 'Invert Title Color in Mobile',
+				'name' => 'color_mobile',
+				'type' => 'true_false',
+				'message' => '',
+				'default_value' => 0,
 			),
 		),
 		'location' => array (

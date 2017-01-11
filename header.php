@@ -27,7 +27,7 @@
 		</div>
 	</a>
 
-	<header id="header" role="banner">
+	<header id="header" role="banner" style="">
 		<div class="container-fluid header">
 			<div class="page-header hidden-xs col-md-2 col-sm-2">
 
