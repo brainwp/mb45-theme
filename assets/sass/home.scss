@@ -201,6 +201,45 @@ input[type="submit"]:hover {
 .section.form {
     margin-bottom:0;
 }
+@media all and (min-width: 993px){
+	.section.mobile-color-white {
+		.theTitle{
+			color: #2d2d2d;
+		}
+		.info{
+			color: #2d2d2d;
+		}
+		.theButtom, .theButtom:hover{
+			border: 0.1px solid #2d2d2d;
+			color: #2d2d2d;
+		}
+		.theButtom:hover{
+			background-color: #2d2d2d;
+			color:#fff;
+			transition:$default-animation;
+		}
+
+	}
+
+	.section.mobile-color-black {
+		.theTitle{
+			color: #fff;
+		}
+		.info{
+			color: #fff;
+		}
+		.theButtom, .theButtom:hover{
+			border: 0.1px solid #fff;
+			color: #fff;
+		}
+		.theButtom:hover{
+			background-color: #fff;
+			color:#2d2d2d;
+			transition:$default-animation;
+		}
+
+	}
+}
 
 @media all and (max-width: 992px) {
 	.theTitle{
@@ -212,7 +251,49 @@ input[type="submit"]:hover {
     		bottom: 0px;
 	}
 
+	.section.mobile-color-white {
+		.theTitle{
+			color: #fff;
+		}
+		.info{
+			color: #fff;
+		}
+		.theButtom, .theButtom:hover{
+			border: 0.1px solid #fff;
+			color: #fff;
+		}
+		.theButtom:hover{
+			background-color: #fff;
+			color:#2d2d2d;
+			transition:$default-animation;
+		}
+
+	}
+
+	.section.mobile-color-black {
+		.theTitle{
+			color: #2d2d2d;
+		}
+		.info{
+			color: #2d2d2d;
+		}
+		.theButtom, .theButtom:hover{
+			border: 0.1px solid #2d2d2d;
+			color: #2d2d2d;
+		}
+		.theButtom:hover{
+			background-color: #2d2d2d;
+			color:#2d2d2d;
+			transition:$default-animation;
+		}
+
+	}
+
+
 }
+
+
+
 @media all and (max-width: 1200px) {
 
 
