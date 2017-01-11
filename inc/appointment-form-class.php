@@ -76,6 +76,7 @@ class MB45_Appointment_Form {
 	 */
 	public function scripts() {
 		$suffix = '';
+
 		wp_enqueue_script( 'jquery-blockui' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 
