@@ -43,35 +43,27 @@ class MB45_Appointment_Form {
 	 */
 	private function validate_post_data() {
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_time'] ) ) {
-			var_dump( $_POST );
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_time'] ) ) {
-			echo '2';
 			return false;
 		}
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_year'] ) ) {
-			echo '3';
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_year'] ) ) {
-			echo '4';
 			return false;
 		}
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_month'] ) ) {
-			echo '5';
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_month'] ) ) {
-			echo '6';
 			return false;
 		}
 		if ( ! isset( $_POST[ 'wc_appointments_field_start_date_day'] ) ) {
-			echo '7';
 			return false;
 		}
 		if ( empty( $_POST[ 'wc_appointments_field_start_date_day'] ) ) {
-			echo '8';
 			return false;
 		}
 
@@ -83,6 +75,7 @@ class MB45_Appointment_Form {
 	 * @return null
 	 */
 	public function scripts() {
+		$suffix = '';
 
 		wp_enqueue_script( 'jquery-blockui' );
 		wp_enqueue_script( 'jquery-ui-datepicker' );
