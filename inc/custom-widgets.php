@@ -63,7 +63,6 @@ class WC_Widget_Checkout extends WC_Widget {
 		$this->widget_end( $args );
 	}
 }
-endif;
 /**
  * Register widgets
  */
@@ -72,3 +71,5 @@ function mb45_register_all_widgets() {
 }
 
 add_action( 'widgets_init', 'mb45_register_all_widgets' );
+
+endif;
