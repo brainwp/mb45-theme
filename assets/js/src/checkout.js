@@ -4,10 +4,8 @@ jQuery(document).ready(function($) {
 		if ( $( this ).attr( 'data-current') == '2' ) {
 			var next = true;
 			$( 'form.woocommerce-checkout .validate-required' ).each( function() {
-				console.log( $( this ).find( 'input' ).val() );
-				console.log( $( this ).is( ':visible' ) );
 				if ( ! $( this ).hasClass( 'validate-state' ) ) {
-					if ( $( this ).find( 'input' ).val().trim() == '' ) {
+					if ( $( this ).find( 'input' ).val().trim() == '' && $( this ).is( ':visible' ) ) {
 						$( this ).addClass( 'woocommerce-invalid' );
 						$( this ).addClass( 'woocommerce-invalid-required-field' );
 						next = false;
