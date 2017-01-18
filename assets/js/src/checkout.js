@@ -4,11 +4,12 @@ jQuery(document).ready(function($) {
 		if ( $( this ).attr( 'data-current') == '2' ) {
 			var next = true;
 			$( 'form.woocommerce-checkout .validate-required' ).each( function() {
+				console.log( $( this ).find( 'input' ).val() );
+				console.log( $( this ).is( ':visible' ) );
 				if ( ! $( this ).hasClass( 'validate-state' ) ) {
 					if ( $( this ).find( 'input' ).val().trim() == '' ) {
 						$( this ).addClass( 'woocommerce-invalid' );
 						$( this ).addClass( 'woocommerce-invalid-required-field' );
-						console.log( $( this ).find( 'input' ) );
 						next = false;
 					}
 				}

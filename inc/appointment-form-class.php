@@ -89,10 +89,12 @@ class MB45_Appointment_Form {
 	private function validate_form_price() {
 		// check if cart is empty
 		if ( WC()->cart->cart_contents_count == 0 ) {
+			echo 'ahooooooooooy1';
+			die();
 			return false;
 		}
 		// check if cart value is zero
-		if ( intval( WC()->cart->total ) == 0 ) {
+		if ( intval( WC()->cart->cart_contents_total ) == 0 ) {
 			return false;
 		}
 		// if this two conditions is false: return true
