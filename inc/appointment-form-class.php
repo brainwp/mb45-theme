@@ -89,8 +89,6 @@ class MB45_Appointment_Form {
 	private function validate_form_price() {
 		// check if cart is empty
 		if ( WC()->cart->cart_contents_count == 0 ) {
-			echo 'ahooooooooooy1';
-			die();
 			return false;
 		}
 		// check if cart value is zero
