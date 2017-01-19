@@ -5,10 +5,9 @@ jQuery(document).ready(function($) {
 			var next = true;
 			$( 'form.woocommerce-checkout .validate-required' ).each( function() {
 				if ( ! $( this ).hasClass( 'validate-state' ) ) {
-					if ( $( this ).find( 'input' ).val().trim() == '' ) {
+					if ( $( this ).find( 'input' ).val().trim() == '' && $( this ).is( ':visible' ) ) {
 						$( this ).addClass( 'woocommerce-invalid' );
 						$( this ).addClass( 'woocommerce-invalid-required-field' );
-						console.log( $( this ).find( 'input' ) );
 						next = false;
 					}
 				}

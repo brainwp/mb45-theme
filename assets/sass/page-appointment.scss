@@ -196,6 +196,10 @@
 	textarea#order_comments {
     	padding: 10px;
     	width: 100%;
+    	color:$cor-preto;
+	}
+	.select2-input {
+		color:$cor-preto;
 	}
 	input[type="tel"] {
 	    float: none;
@@ -271,6 +275,10 @@
     	font-size: 1.3em;
     	font-style: italic;
     	color: #fefefe;
+	}
+	.create-account p:first-child {
+		display: inline-block;
+		width:100%;
 	}
 }
 

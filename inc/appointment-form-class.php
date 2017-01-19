@@ -86,6 +86,18 @@ class MB45_Appointment_Form {
 		wp_enqueue_script( 'wc-appointments-select2', WC_APPOINTMENTS_PLUGIN_URL . '/assets/js/select2' . $suffix . '.js', array( 'wc-appointments-appointment-form' ), WC_APPOINTMENTS_VERSION, true );
 		wp_enqueue_style( 'dashicons' );
 	}
+	private function validate_form_price() {
+		// check if cart is empty
+		if ( WC()->cart->cart_contents_count == 0 ) {
+			return false;
+		}
+		// check if cart value is zero
+		if ( intval( WC()->cart->cart_contents_total ) == 0 ) {
+			return false;
+		}
+		// if this two conditions is false: return true
+		return true;
+	}
 	/**
 	 * Process appointment form
 	 * @return null
@@ -100,6 +112,11 @@ class MB45_Appointment_Form {
 		$has_notice = false;
 		if ( $this->validate_post_data() ) {
 			WC()->cart->add_to_cart( $_POST[ 'appointment-product'] );
+			// validate price ( check if is != 0 )
+			if ( ! $this->validate_form_price() ) {
+				$has_notice = true;
+				wc_add_notice( __( 'You must select at least one Service to continue.', 'odin' ), 'error' );
+			}
 		} else {
 			$has_notice = true;
 			wc_add_notice( __( 'Date field has not been properly filled', 'odin' ), 'error' );

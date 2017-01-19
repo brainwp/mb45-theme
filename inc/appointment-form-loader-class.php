@@ -1,7 +1,8 @@
 <?php
 /**
-*
-*/
+ * Extend Class WC_Appointment_Form
+ */
+if ( class_exists( 'WC_Appointment_Form' ) ) :
 class MB45_Change_Appointment_Form_Loader extends WC_Appointment_Form {
 /**
 	 * Appointment form scripts
@@ -46,3 +47,4 @@ class MB45_Change_Appointment_Form_Loader extends WC_Appointment_Form {
 		}
 	}
 }
+endif;
