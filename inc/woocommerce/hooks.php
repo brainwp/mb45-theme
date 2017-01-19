@@ -87,3 +87,15 @@ function mb45_reorder_account_menu_items( $items ) {
 }
 
 add_filter( 'woocommerce_account_menu_items', 'mb45_reorder_account_menu_items' );
+/**
+ * Add body class if user is unlogged
+ * @param array $classes
+ * @return array
+ */
+function add_unlogged_body_class_my_account( $classes ) {
+	if ( is_page_template( 'page-myaccount.php') && ! is_user_logged_in() ) {
+		$classes[] = 'unlogged';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_unlogged_body_class_my_account' );

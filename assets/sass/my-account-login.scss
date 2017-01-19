@@ -1,0 +1,51 @@
+body.woocommerce-account.unlogged {
+	.line {
+		border:none !important;
+	}
+	header.entry-header {
+		display: none;
+	}
+	#customer_login {
+		background: url( '../images/separator-login.png' ) center center repeat-y;
+	}
+	.woocommerce {
+		form.login, form.register {
+			border:none !important;
+		}
+
+		form h2 {
+			text-transform: uppercase;
+			font-size:1.4em;
+			padding-bottom: 20px;
+		}
+
+		span.required {
+			display: none;
+		}
+		form label {
+			font-size:0.8em;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+		input[type="password"] {
+			background: transparent;
+			border:none;
+			border-bottom: 0.1px solid white;
+			width:100%;
+		}
+		.button {
+			background: #f87b79;
+			color:$cor-txt-post;
+			border-radius: 0 !important;
+			text-transform: uppercase;
+			font-weight: normal !important;
+			width:100%;
+		}
+		.lost_password a {
+			font-size:0.7em;
+			font-weight: normal;
+			text-transform: uppercase;
+			color:$cor-txt-post !important;
+		}
+	}
+}
