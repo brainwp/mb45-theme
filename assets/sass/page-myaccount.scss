@@ -1,0 +1,356 @@
+.page-template-page-myaccount{
+	h1 {
+	    font-size: 3.5em;
+	    font-weight: bold;
+	    color: white;
+	    font-family: $familia-padrao;
+	    text-transform: uppercase;
+	    margin-top: 50px;
+	}
+	li {
+	    list-style: none;
+	    text-align: left;
+	}
+
+	.line{
+		padding: 0px;
+	}
+
+	.woocommerce-MyAccount-navigation li a {
+	    color: white;
+	    font-family: Gotham;
+	    text-transform: uppercase;
+	    font-size: 0.70em;
+	    letter-spacing: 2.5px;
+	    font-weight: bold;
+	}
+
+	.woocommerce-MyAccount-navigation{
+		ul {
+    		padding-left: 20px;
+		}
+
+    	padding-top: 30px;
+    	padding-bottom: 30px;
+    	padding-left: 15px;
+	}
+
+	.woocommerce-MyAccount-content{
+		border-left: 2px solid;
+		width: calc(70% + 2px) !important;
+		margin-left: -2px;
+		padding-top: 30px;
+   		padding-bottom: 30px;
+    	padding-left: 30px;
+    	font-family: $familia-padrao;
+	    font-size: 0.8em;
+	    text-align: left;
+	    line-height: 23px;
+	}
+	.entry-content .woocommerce {
+		display: flex;
+		flex-flow: row;
+	}
+}
+.woocommerce-orders{
+
+	.woocommerce-MyAccount-content{
+		padding: 0px;
+
+		span.nobr {
+		    padding-top: 30px;
+		    display: block;
+		    font-size: 1.1em;
+		    text-transform: uppercase;
+		    padding-bottom: 10px;
+		}
+
+		td.order-number a {
+    		color: white;
+    		padding: 3px;
+		}
+
+		tr.order td {
+		    padding-top: 15px!important;
+		    padding-bottom: 15px!important;
+		}
+		a.button.view {
+		  background: white!important;
+		  border-radius: 0px;
+		  text-transform: uppercase;
+		  letter-spacing: 1.5px;
+		  text-align: center;
+		  color: #33135e !important;
+		  border: 2px solid;
+		  transition: all ease-in 200ms;
+
+		}
+
+		a.button.pay, a.button.cancel {
+		   background: white!important;
+		  border-radius: 0px;
+		  text-transform: uppercase;
+		  letter-spacing: 1.5px;
+		  text-align: center;
+		  color: #33135e !important;
+		  border: 2px solid;
+		    margin-right: 3px!important;
+		    border: 2px solid;
+		    transition: all ease-in 200ms;
+		}
+
+		a.button:hover{
+			background:none!Important;
+			border: 2px solid;
+			color: white!important;
+		}
+
+
+
+		th, td {
+    		padding-left: 22px!important;
+		}
+
+
+	}
+
+	.woocommerce table.shop_table {
+    		border: 0px!Important;
+	}
+}
+.woocommerce-edit-address{
+
+	input.button {
+		background: white!important;
+	    border-radius: 0px;
+	    text-transform: uppercase;
+	    letter-spacing: 1.5px;
+	    text-align: center;
+	    color: #33135e !important;
+	    border: 2px solid!important;
+	    transition: all ease-in 200ms;
+	    float: right;
+	    font-size: .8em!important;
+	    padding: 15px 60px!important;
+	}
+
+	.woocommerce-MyAccount-content{
+		padding-right: 30px;
+	}
+	header.woocommerce-Address-title.title {
+	    display: flex;
+	    align-items: center;
+	    flex-flow: row;
+	}
+	a.edit {
+    	padding-left: 15px;
+    	color: white;
+	    text-transform: uppercase;
+	    font-size: .9em;
+	    line-height: 10px;
+	}
+
+	header.woocommerce-Address-title.title h3 {
+	    margin: 0px!important;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+	    text-transform: uppercase;
+    	font-weight: bold;
+    	font-size: 1.2em;
+    	letter-spacing: 1px;
+	}
+	form h3 {
+		text-transform: uppercase;
+    	font-weight: bold;
+	}
+
+	input[type="tel"] {
+	    float: none;
+	    display: block;
+	    background: none;
+	    border: none;
+	    border-bottom: 0.1px solid white;
+	    color: white;
+
+	}
+	label {
+    	text-transform: uppercase;
+    	font-size: 0.99em;
+	}
+	p#billing_city_field, p#billing_address_2_field, p#billing_address_1_field{
+		width: 100%;
+	}
+}
+
+.woocommerce-view-order{
+	h2 {
+		text-transform: uppercase;
+    	font-weight: bold;
+	}
+
+	table.shop_table.order_details {
+    	border: 0px!important;
+	}
+	th.product-name, .product-total {
+    	text-transform: uppercase;
+	}
+	td.product-name {
+	    display: flex;
+	    flex-flow: row-reverse;
+	    justify-content: flex-end;
+	}
+	strong.product-quantity {
+    	order: -1;
+    	padding-left: 10px;
+	}
+	.product-name a, strong {
+	    padding-top: 5px;
+	}
+
+	.product-name a{
+		color: white;
+	}
+}
+.woocommerce-order-pay{
+	h1{
+		text-transform: uppercase;
+	}
+	table{
+		border: 0px!important;
+	}
+	.shop_table{
+		thead .product-name, .product-quantity, .product-total{
+			text-transform: uppercase;
+		}
+	}
+	.line{
+		padding-left: 0px!important;
+		padding-right: 0px!important;
+	}
+}
+.woocommerce-edit-account{
+	h2{
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	label {
+    	text-transform: uppercase;
+    	font-size: 0.99em;
+	}
+	.woocommerce-MyAccount-content{
+		padding-right: 30px;
+	}
+
+	fieldset legend{
+		border: 0px!important;
+	    text-transform: uppercase;
+	    padding-top: 24px;
+	    color: white;
+	    font-weight: bold;
+	}
+
+	input[type="password"] {
+	    float: none;
+	    display: block;
+	    background: none;
+	    border: none;
+	    border-bottom: 0.1px solid white;
+	    color: white;
+
+	}
+	input.button {
+		background: white!important;
+	    border-radius: 0px;
+	    text-transform: uppercase;
+	    letter-spacing: 1.5px;
+	    text-align: center;
+	    color: #33135e !important;
+	    border: 2px solid!important;
+	    transition: all ease-in 200ms;
+	    float: right;
+	    font-size: .8em!important;
+	    padding: 15px 60px!important;
+	    margin-top: 15px!important;
+	}
+}
+.woocommerce-MyAccount-content{
+	padding-left: 0px!important;
+}
+
+.woocommerce-edit-address,  .woocommerce-edit-account{
+	.woocommerce-MyAccount-content{
+		padding-left: 30px!important;
+	}
+}
+	.appointment-class{
+		a{
+			color: white;
+		}
+		 h2 {
+		    text-transform: uppercase;
+		    padding-left: 15px;
+		    margin-top: 3px!Important;
+    		font-weight: bold;
+		}
+
+
+		span.nobr {
+		    padding-top: 30px;
+		    display: block;
+		    font-size: 1.1em;
+		    text-transform: uppercase;
+		    padding-bottom: 10px;
+		}
+
+		td.order-number a {
+    		color: white;
+    		padding: 3px;
+		}
+
+		tr.order td {
+		    padding-top: 15px!important;
+		    padding-bottom: 15px!important;
+		}
+		a.button.view {
+		  background: white!important;
+		  border-radius: 0px;
+		  text-transform: uppercase;
+		  letter-spacing: 1.5px;
+		  text-align: center;
+		  color: #33135e !important;
+		  border: 2px solid;
+		  transition: all ease-in 200ms;
+
+		}
+
+		a.button.pay, a.button.cancel {
+		   background: white!important;
+		  border-radius: 0px;
+		  text-transform: uppercase;
+		  letter-spacing: 1.5px;
+		  text-align: center;
+		  color: #33135e !important;
+		  border: 2px solid;
+		    margin-right: 3px!important;
+		    border: 2px solid;
+		    transition: all ease-in 200ms;
+		}
+
+		a.button:hover{
+			background:none!Important;
+			border: 2px solid;
+			color: white!important;
+		}
+
+
+
+		th, td {
+    		padding-left: 22px!important;
+		}
+
+
+	}
+
+	.woocommerce table.shop_table {
+    		border: 0px!Important;
+	}
