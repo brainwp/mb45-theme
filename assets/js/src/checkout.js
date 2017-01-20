@@ -43,4 +43,28 @@ jQuery(document).ready(function($) {
 			$( 'a.back-button' ).fadeOut( 'slow' );
 		}
 	});
+	// Apply coupons
+	var couponVisibleTimer;
+	$( 'body' ).on( 'keyup mouseover click', 'input[name="apply-wc-coupon"]', function( e ){
+		if ( $( this ).val().trim() == '' ) {
+			return;
+		}
+		if ( $( '.btn-apply-coupon' ).hasClass( 'visible' ) ) {
+			clearTimeout( couponVisibleTimer );
+		}
+		$( '.btn-apply-coupon' ).addClass( 'visible' );
+		couponVisibleTimer = setTimeout( function(){
+			$( '.btn-apply-coupon' ).removeClass( 'visible' );
+		}, 5000 );
+	});
+	// Send coupons to ajax
+	$( 'body' ).on( 'click', 'a.btn-apply-coupon', function( e ){
+		var $coupon_input = $( 'input[name="apply-wc-coupon"]' );
+		var $coupon_ajax_input = $( '#coupon_code' );
+		if ( $coupon_input.val().trim() == '' ) {
+			return;
+		}
+		$coupon_ajax_input.val( $coupon_input.val() );
+		$( 'input[name="apply_coupon"]' ).trigger( 'click' );
+	});
 });
