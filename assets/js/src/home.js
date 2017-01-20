@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 	//FRONT-END
+
 	$('.navbar-toggle').on("click", function(g){
 		$('.header').toggleClass('backgroundMenu', 1000);
 		$('.navbar-toggle').toggleClass('activeButtom', 1000);
@@ -8,12 +9,15 @@ jQuery(document).ready(function($) {
 		inheritOriginalWidth: false,
 	});
 
+
+
 	$('#fullpage').fullpage({
 		menu: '#header',
 		navigation: true,
 		navigationPosition: 'left',
 		scrollBar: false,
 		autoScrolling: true,
+
 
 	});
 	$('#fullpage-nails').fullpage({
@@ -40,6 +44,11 @@ jQuery(document).ready(function($) {
 	});
 
 
+	if ( $(window).width() <= 921 ){
+		$.fn.fullpage.setAutoScrolling(false);
+
+	}
+
 	$( '.hair-name' ).center();
 
 	$width = $(window).width();
@@ -49,6 +58,8 @@ jQuery(document).ready(function($) {
 			height: "$mobileHeight"
 		});
 	}
+
+
 
 	$('.woocommerce-checkout p.form-row').addClass('col-md-9');
 	$('.wc-appointments-date-picker').addClass('col-md-7 no-float no-padding');
