@@ -736,7 +736,7 @@
 		opacity:1;
 		display: inline-block;
 		transition:700ms ease all;
-		margin-top: -21px;
+		margin-top: -15px;
 		@media screen and ( max-width: 800px ) {
 			margin-top:10px;
 			margin-left:0;
@@ -745,6 +745,8 @@
 	input[name="apply-wc-coupon"] {
 		width:47% !important;
 		float:left;
+		font-size:1.3em;
+		font-style:italic;
 		@media screen and ( max-width: 800px ) {
 			width:100% !important;
 		}
