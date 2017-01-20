@@ -99,3 +99,15 @@ function add_unlogged_body_class_my_account( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'add_unlogged_body_class_my_account' );
+
+/**
+ * Show a coupon link above the order details.
+**/
+function show_coupon_as_a_checkout_field() {
+	echo '<div class="form-row form-row form-row-wide form-coupon-checkout col-md-12" style="clear:both;">';
+	_e( '<label>Coupon/Gift Card</label>', 'odin' );
+	echo '<input type="text" name="apply-wc-coupon">';
+	printf( '<a href="#" class="btn btn-apply-coupon">%s</a>', __( 'Apply coupon', 'odin' ) );
+	echo '</div>';
+}
+add_action( 'woocommerce_after_checkout_billing_form', 'show_coupon_as_a_checkout_field' );
