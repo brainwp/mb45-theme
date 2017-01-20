@@ -15,7 +15,12 @@ footer#footer {
 	font-family: $familia-padrao;
 	padding-bottom: 25px;
 	padding-top: 20px;
-
+	position: absolute;
+	width: 100%;
+	bottom:-70px;
+}
+.fp-section footer#footer {
+	margin-top:70px;
 }
 .footerMenu {
 	text-transform: uppercase;

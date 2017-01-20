@@ -72,3 +72,30 @@ function mb45_remove_cart_item() {
 	}
 }
 add_action( 'get_header', 'mb45_remove_cart_item' );
+/**
+ * Reorder my account tab link list
+ * @param array $items
+ * @return array
+ */
+function mb45_reorder_account_menu_items( $items ) {
+	unset( $items[ 'dashboard' ] );
+	asort( $items );
+	$logout_value = $items[ 'customer-logout' ];
+	unset( $items[ 'customer-logout' ] );
+	$items[ 'customer-logout' ] = $logout_value;
+	return $items;
+}
+
+add_filter( 'woocommerce_account_menu_items', 'mb45_reorder_account_menu_items' );
+/**
+ * Add body class if user is unlogged
+ * @param array $classes
+ * @return array
+ */
+function add_unlogged_body_class_my_account( $classes ) {
+	if ( is_page_template( 'page-myaccount.php') && ! is_user_logged_in() ) {
+		$classes[] = 'unlogged';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_unlogged_body_class_my_account' );
