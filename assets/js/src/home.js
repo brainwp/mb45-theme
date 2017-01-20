@@ -19,6 +19,7 @@ jQuery(document).ready(function($) {
 		autoScrolling: true,
 
 
+
 	});
 	$('#fullpage-nails').fullpage({
 		menu: '#header',
