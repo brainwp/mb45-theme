@@ -6,11 +6,21 @@ body.woocommerce-account.unlogged {
 		display: none;
 	}
 	#customer_login {
-		background: url( '../images/separator-login.png' ) center center repeat-y;
+		@media screen and (min-width: 760px ) {
+			background: url( '../images/separator-login.png' ) center center repeat-y;
+		}
+	}
+	@media screen and (max-width: 760px ) {
+		.entry-content {
+			margin-top:0;
+		}
 	}
 	.woocommerce {
 		form.login, form.register {
 			border:none !important;
+			@media screen and (max-width: 760px ) {
+				padding:0 !important;
+			}
 		}
 
 		form h2 {
