@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
 
 
 	$('.woocommerce-checkout p.form-row').addClass('col-md-9');
-	$('.wc-appointments-date-picker').addClass('col-md-7 no-float no-padding');
+	$('.wc-appointments-date-picker').addClass('col-md-4 no-float no-padding');
 
 
 
