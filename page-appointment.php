@@ -81,7 +81,7 @@ get_header( 'shop' );
 			</div>
 			<!-- END: AREA 1 -->
 
-			<div class="col-md-4 control">
+			<div class="col-md-7 control">
 				<?php for ( $i = 0; $i < 1; $i++ ) : ?>
 					<?php $style = '';
 						$value = 'false';
@@ -98,7 +98,7 @@ get_header( 'shop' );
 						<div class="select-field">
 							<div class="select-field col-md-12">
 								<?php _e( '<label>When?</label>', 'odin' );?>
-								<?php printf( __( '<div class="select-area col-md-7"><a href="#" class="btn show-options-btn col-md-12" data-show="false" data-id="#show-%s">Choose a date</a></div>', 'odin' ), $id );
+								<?php printf( __( '<div class="select-area col-md-4"><a href="#" class="btn show-options-btn col-md-12" data-show="false" data-id="#show-%s">Choose a date</a></div>', 'odin' ), $id );
 								printf( '<div id="show-%s" class="col-md-12 show-options" style="display:none;">', $id );
 									$form->output();
 								echo '</div>';?>
