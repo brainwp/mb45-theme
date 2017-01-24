@@ -49,7 +49,7 @@ get_header(); ?>
 					<div class="theTitle">
 						<?php the_title();?>
 					</div>
-					<div class="info col-md-8 hidden-xs">
+					<div class="info col-md-12 hidden-xs">
 						<?php the_content();?>
 					</div>
 					<?php if ( $value = get_post_meta( get_the_ID(), 'link_url', true ) ) : ?>
