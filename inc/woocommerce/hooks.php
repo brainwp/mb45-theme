@@ -111,3 +111,11 @@ function show_coupon_as_a_checkout_field() {
 	echo '</div>';
 }
 add_action( 'woocommerce_after_checkout_billing_form', 'show_coupon_as_a_checkout_field' );
+
+/**
+ *
+ * Add class to redirect user after add product to cart
+ *
+*/
+require_once( get_template_directory() . '/inc/woocommerce/class-redirect-after-add-to-cart.php' );
+new Brasa_Redirect_After_Add_To_Cart( home_url( '/appointment/step-2' ), true );
