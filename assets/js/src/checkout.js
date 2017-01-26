@@ -1,7 +1,12 @@
 jQuery(document).ready(function($) {
+	// prevent script execution on another pages
+	if( ! $( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
+		return;
+	}
+	var needStep3 = true;
 	$( 'body' ).on( 'click', 'a.submit-checkout', function( e ) {
 		e.preventDefault();
-		if ( $( this ).attr( 'data-current') == '2' ) {
+		if ( $( this ).attr( 'data-current') == '2' && needStep3 ) {
 			var next = true;
 			$( 'form.woocommerce-checkout .validate-required' ).each( function() {
 				if ( ! $( this ).hasClass( 'validate-state' ) ) {
@@ -66,5 +71,23 @@ jQuery(document).ready(function($) {
 		}
 		$coupon_ajax_input.val( $coupon_input.val() );
 		$( 'input[name="apply_coupon"]' ).trigger( 'click' );
+	});
+	// hidden step 3 if price is = 0
+	$( document ).ajaxComplete(function( e, request, settings ) {
+		if ( typeof request.responseJSON !== 'undefined' ) {
+			setTimeout( function(){
+				var $elem = $( '.order-total .woocommerce-Price-amount' );
+				$( 'body' ).append( '<div id="temp-html-price" style="display:none;"></div>' );
+				$( '#temp-html-price' ).html( $elem.html() );
+				$( '#temp-html-price span' ).remove();
+				var price = parseInt( $( '#temp-html-price' ).html() );
+				console.log( price );
+				if ( price == 0 ) {
+					$( 'a.submit-checkout' ).html( $( 'a.submit-checkout' ).attr( 'data-step3' ) );
+					needStep3 = false;
+				}
+				$( '#temp-html-price' ).remove();
+			}, 300 );
+		}
 	});
 });
