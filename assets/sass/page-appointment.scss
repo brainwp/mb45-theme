@@ -93,6 +93,18 @@
 	    font-weight: bold;
 	    margin-top: 30px;
 	    letter-spacing: 3px;
+	    padding-top:10px;
+	}
+	.woocommerce-shipping-fields {
+		clear: both;
+	}
+	#get_sms_notification_field label {
+		margin-left:20px;
+		input {
+			margin-left:-20px;
+			display: inline-block;
+			margin-top:6px;
+		}
 	}
 	.product-infos .checkout-steps{padding: 0px;}
 	.woocommerce-shipping-fields p {
@@ -706,9 +718,6 @@
 	.product-infos{
 		justify-content: initial;
 	}
-}
-.woocommerce-shipping-fields {
-	display: none;
 }
 
 /** checkout coupon field */
