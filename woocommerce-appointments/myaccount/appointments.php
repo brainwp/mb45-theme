@@ -31,7 +31,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<thead>
 				<tr>
 					<th scope="col" class="appointment-id"><?php _e( 'ID', 'woocommerce-appointments' ); ?></th>
-					<th scope="col" class="scheduled-product"><?php _e( 'Scheduled', 'woocommerce-appointments' ); ?></th>
 					<th scope="col" class="order-number"><?php _e( 'Order', 'woocommerce-appointments' ); ?></th>
 					<th scope="col" class="appointment-date"><?php _e( 'Date', 'woocommerce-appointments' ); ?></th>
 					<th scope="col" class="appointment-time"><?php _e( 'Time', 'woocommerce-appointments' ); ?></th>
@@ -43,13 +42,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php foreach ( $table['appointments'] as $appointment ) : ?>
 					<tr>
 						<td class="appointment-id"><?php echo $appointment->get_id(); ?></td>
-						<td class="scheduled-product">
-							<?php if ( $appointment->get_product() ) : ?>
-							<a href="<?php echo get_permalink( $appointment->get_product()->id ); ?>">
-								<?php echo $appointment->get_product()->get_title(); ?>
-							</a>
-							<?php endif; ?>
-						</td>
 						<td class="order-number">
 							<?php if ( $appointment->get_order() ) : ?>
 							<a href="<?php echo $appointment->get_order()->get_view_order_url(); ?>">
