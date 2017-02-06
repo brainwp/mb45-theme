@@ -119,3 +119,66 @@ add_action( 'woocommerce_after_checkout_billing_form', 'show_coupon_as_a_checkou
 */
 require_once( get_template_directory() . '/inc/woocommerce/class-redirect-after-add-to-cart.php' );
 new Brasa_Redirect_After_Add_To_Cart( home_url( '/appointment/step-2' ), true );
+
+/**
+ * Get appointment post by order id
+ * @param int $order_id
+ */
+function wc_get_appointment_id_by_order( $order_id ) {
+	$args = array(
+		'post_parent'		=> $order_id,
+		'numberposts'		=> 1,
+		'post_type'			=> 'wc_appointment',
+		'post_status'		=> 'any'
+	);
+	$appointment = get_posts( $args );
+	if ( $appointment && ! empty( $appointment ) ) {
+		return $appointment[0]->ID;
+	}
+	return false;
+}
+/**
+ * Add custom plivo variables
+ * @param array $variables
+ * @param int|bool $order_id
+ * @return array
+ */
+function custom_wcp_variable_values( $variables, $order_id = false ) {
+	if ( ! $order_id ) {
+		$order_id = $variables[ 'order_id' ];
+	}
+	$appointment_id = wc_get_appointment_id_by_order( $order_id );
+
+	$variables[ 'appointment_date' ] = 'ahooooy' . $order_id;
+	if ( false === $appointment_id ) {
+		return $variables;
+	}
+	$appointment = get_wc_appointment( $appointment_id );
+	$start_date = new DateTime();
+	$start_date->setTimestamp( $appointment->start );
+	$end_date = new DateTime();
+	$end_date->setTimestamp( $appointment->end );
+	$duration = $start_date->diff( $end_date );
+	$duration_format = $duration->format( '%H:%I' );
+
+	$variables[ 'appointment_date' ] = sprintf( __( "Date: %s.\n", 'odin' ), $appointment->get_start_date( 'm/d/Y', '' ) );
+	$variables[ 'appointment_date' ] = sprintf( __( "Time: %s.\n", 'odin' ), $appointment->get_start_date( 'h:i A', '' ) );
+	$variables[ 'appointment_date' ] .= sprintf( __( "Duration: %s.\n", 'odin' ), $duration_format );
+	$variables[ 'appointment_date' ] .= sprintf( __( "Appointment ID: %s.\n", 'odin' ), $appointment_id );
+
+	return $variables;
+}
+
+add_filter( 'wcp_variable_values', 'custom_wcp_variable_values', 99999, 2 );
+
+/**
+ * Plivio Variables Description on dashboard
+ * @param array $variables
+ * @return array
+ */
+function custom_wcp_variable_description( $variables ) {
+	$variables[ 'appointment_date' ] = 'Appointment Date';
+	return $variables;
+}
+
+add_filter( 'wcp_variables', 'custom_wcp_variable_description' );
