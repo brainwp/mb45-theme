@@ -438,3 +438,17 @@ function custom_billing_fields( $fields )  {
 	return $fields;
 }
 
+
+/**
+ * Add body class if is page wp-activate.php
+ * @param array $classes
+ * @return array
+ */
+function wp_activate_body_class( $classes ) {
+	if ( did_action( 'activate_wp_head' ) > 0 ) {
+		$classes[] = 'wp-activate';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'wp_activate_body_class' );
+
