@@ -322,3 +322,19 @@ input[type="submit"]:hover {
 		display: none;
 	}
 }
+
+.wp-activate-container {
+    margin-top: 107px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-activate-container h2 {
+    display: none;
+}
+
+.wp-activate-container p {
+    text-transform: uppercase;
+}
