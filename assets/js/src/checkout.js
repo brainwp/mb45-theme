@@ -3,9 +3,30 @@ jQuery(document).ready(function($) {
 	if( ! $( 'body' ).hasClass( 'woocommerce-checkout' ) ) {
 		return;
 	}
+	// update user phone to add country code
+	var updatePhone = function() {
+		if ( $( '#get_sms_notification' ).length > 0 && $( '#get_sms_notification' ).is( ':checked' ) ) {
+			var $input_phone = $( 'form.woocommerce-checkout #billing_phone' );
+			var value = $input_phone.val();
+			value = value.replace( '-', '' ).replace( /\s/g, '' );
+			if ( value == '' ) {
+				return;
+			}
+			if ( ! ( ( value >= 11 || value.indexOf( '+1' ) > -1 ) || value.indexOf( '+55' ) > -1 ) ) {
+				var check_value = '+' + value;
+				if ( check_value.substring( 0, 2 ) != '+1' || check_value.substring( 0, 3 ) != '+55' ) {
+					value = '+1' + value;
+				} else {
+					value = check_value;
+				}
+				$input_phone.val( value );
+			}
+		}
+	}
 	var needStep3 = true;
 	$( 'body' ).on( 'click', 'a.submit-checkout', function( e ) {
 		e.preventDefault();
+		updatePhone();
 		if ( $( this ).attr( 'data-current') == '2' && needStep3 ) {
 			var next = true;
 			$( 'form.woocommerce-checkout .validate-required' ).each( function() {
@@ -89,5 +110,8 @@ jQuery(document).ready(function($) {
 				$( '#temp-html-price' ).remove();
 			}, 300 );
 		}
+	});
+	$( 'body').on( 'submit', 'form.woocommerce-checkout', function( e ) {
+		e.preventDefault();
 	});
 });
