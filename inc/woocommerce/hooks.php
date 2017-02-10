@@ -190,7 +190,7 @@ function custom_wcp_variable_values( $variables, $order_id = false ) {
 		$appointment = get_wc_appointment( $appointment_id );
 
 		$variables[ 'appointment_date' ] = sprintf( __( "Date: %s.\n", 'odin' ), $appointment->get_start_date( 'm/d/Y', '' ) );
-		$variables[ 'appointment_date' ] = sprintf( __( "Time: %s.\n", 'odin' ), $appointment->get_start_date( 'h:i A', '' ) );
+		$variables[ 'appointment_date' ] .= sprintf( __( "Time: %s.\n", 'odin' ), $appointment->get_start_date( 'h:i A', '' ) );
 		$variables[ 'appointment_date' ] .= sprintf( __( "Appointment ID: %s.\n", 'odin' ), $appointment_id );
 	}
 	$gift_cards = wc_get_all_gift_cards( $order );
