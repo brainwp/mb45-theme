@@ -138,6 +138,42 @@ function wc_get_appointment_id_by_order( $order_id ) {
 	return false;
 }
 /**
+ * Show gift cards in a order object separated by comma
+ * @param object $order
+ * @param string|bool $message
+ * @return string|bool
+ */
+function wc_get_all_gift_cards( $order, $message = false ) {
+	if( ! is_object( $order ) ) {
+		return false;
+	}
+	$items = $order->get_items();
+	if ( ! is_array( $items ) || empty( $items ) ) {
+		return false;
+	}
+	if ( false === $message ) {
+		$message = __( 'Gift Card: %s', 'odin' );
+	}
+	$item_message = '';
+	$i = 0;
+	foreach ( $items as $item_key => $item_value ) {
+		if ( isset( $item_value[ 'item_meta' ][ '_ywgc_gift_card_number' ] ) ) {
+			if( $i > 0 ) {
+				$item_message .= ', ' . $item_value[ 'item_meta' ][ '_ywgc_gift_card_number' ][0];
+			} else {
+				$item_message .= $item_value[ 'item_meta' ][ '_ywgc_gift_card_number' ][0];
+			}
+			$i++;
+		}
+	}
+	if ( 0 === $i ) {
+		return false;
+	} else {
+		$message = sprintf( $message, $item_message );
+		return $message;
+	}
+}
+/**
  * Add custom plivo variables
  * @param array $variables
  * @param int|bool $order_id
@@ -147,24 +183,21 @@ function custom_wcp_variable_values( $variables, $order_id = false ) {
 	if ( ! $order_id ) {
 		$order_id = $variables[ 'order_id' ];
 	}
+	$order = new WC_Order( $order_id );
 	$appointment_id = wc_get_appointment_id_by_order( $order_id );
+	$variables[ 'appointment_date' ] = '';
+	if ( $appointment_id ) {
+		$appointment = get_wc_appointment( $appointment_id );
 
-	if ( false === $appointment_id ) {
-		return $variables;
+		$variables[ 'appointment_date' ] = sprintf( __( "Date: %s.\n", 'odin' ), $appointment->get_start_date( 'm/d/Y', '' ) );
+		$variables[ 'appointment_date' ] = sprintf( __( "Time: %s.\n", 'odin' ), $appointment->get_start_date( 'h:i A', '' ) );
+		$variables[ 'appointment_date' ] .= sprintf( __( "Appointment ID: %s.\n", 'odin' ), $appointment_id );
 	}
-	$appointment = get_wc_appointment( $appointment_id );
-	$start_date = new DateTime();
-	$start_date->setTimestamp( $appointment->start );
-	$end_date = new DateTime();
-	$end_date->setTimestamp( $appointment->end );
-	$duration = $start_date->diff( $end_date );
-	$duration_format = $duration->format( '%H:%I' );
-
-	$variables[ 'appointment_date' ] = sprintf( __( "Date: %s.\n", 'odin' ), $appointment->get_start_date( 'm/d/Y', '' ) );
-	$variables[ 'appointment_date' ] = sprintf( __( "Time: %s.\n", 'odin' ), $appointment->get_start_date( 'h:i A', '' ) );
-	$variables[ 'appointment_date' ] .= sprintf( __( "Duration: %s.\n", 'odin' ), $duration_format );
-	$variables[ 'appointment_date' ] .= sprintf( __( "Appointment ID: %s.\n", 'odin' ), $appointment_id );
-
+	$gift_cards = wc_get_all_gift_cards( $order );
+	$variables[ 'gift_card' ] = '';
+	if ( $gift_cards ) {
+		$variables[ 'gift_card' ] = $gift_cards;
+	}
 	return $variables;
 }
 
@@ -177,6 +210,8 @@ add_filter( 'wcp_variable_values', 'custom_wcp_variable_values', 99999, 2 );
  */
 function custom_wcp_variable_description( $variables ) {
 	$variables[ 'appointment_date' ] = 'Appointment Date';
+	$variables[ 'gift_card' ] = 'Gift Card';
+
 	return $variables;
 }
 
