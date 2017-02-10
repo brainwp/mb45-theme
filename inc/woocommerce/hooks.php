@@ -149,7 +149,6 @@ function custom_wcp_variable_values( $variables, $order_id = false ) {
 	}
 	$appointment_id = wc_get_appointment_id_by_order( $order_id );
 
-	$variables[ 'appointment_date' ] = 'ahooooy' . $order_id;
 	if ( false === $appointment_id ) {
 		return $variables;
 	}
