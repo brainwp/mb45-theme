@@ -60,6 +60,12 @@ jQuery(document).ready(function($) {
 			$( 'form.woocommerce-checkout' ).submit();
 		}
 	});
+  	$( 'form.woocommerce-checkout' ).keydown( function( e ){
+    	if( 13 == e.keyCode ) {
+      		e.preventDefault();
+      		$( 'a.submit-checkout' ).trigger( 'click' );
+      	}
+    });
 	$( 'body' ).on( 'click', 'a.back-button', function( e ) {
 		e.preventDefault();
 		$button = $( 'a.submit-checkout' );
