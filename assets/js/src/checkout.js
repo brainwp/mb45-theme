@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 			if ( value == '' ) {
 				return;
 			}
-			if ( ! ( ( value >= 11 || value.indexOf( '+1' ) > -1 ) || value.indexOf( '+55' ) > -1 ) ) {
+			if ( ! ( ( value.length >= 11 || value.indexOf( '+1' ) > -1 ) || value.indexOf( '+55' ) > -1 ) ) {
 				var check_value = '+' + value;
 				if ( check_value.substring( 0, 2 ) != '+1' || check_value.substring( 0, 3 ) != '+55' ) {
 					value = '+1' + value;
@@ -23,6 +23,12 @@ jQuery(document).ready(function($) {
 			}
 		}
 	}
+	$( window ).load( function() {
+		updatePhone();
+	});
+	$( '#get_sms_notification' ).on( 'change', function(){
+		updatePhone();
+	} );
 	var needStep3 = true;
 	$( 'body' ).on( 'click', 'a.submit-checkout', function( e ) {
 		e.preventDefault();
