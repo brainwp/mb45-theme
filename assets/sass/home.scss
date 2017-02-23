@@ -328,6 +328,8 @@ input[type="submit"]:hover {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    margin-top: 15%;
+    margin-left: 30px;
 }
 
 .wp-activate-container h2 {
@@ -345,18 +347,19 @@ input[type="submit"]:hover {
 
 
 .wp-activate{
-	height: 100%;
-	.full-width div {
-    	height: 100%;
+	#submit, #key{
+		width: 100%;
 	}
-	div#wrapper {
-    	height: 100%;
-	}
-	div#signup-content {
-    	height: 100%!Important;
-	}
-
 	input#submit {
     	font-size: 1.3em;
+    	width: 100%;
+	}
+
+}
+
+
+@media all and (max-width: 768px){
+	.wp-activate-container {
+		margin-top: 20%;
 	}
 }
