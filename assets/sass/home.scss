@@ -324,7 +324,6 @@ input[type="submit"]:hover {
 }
 
 .wp-activate-container {
-    margin-top: 107px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -337,4 +336,27 @@ input[type="submit"]:hover {
 
 .wp-activate-container p {
     text-transform: uppercase;
+}
+
+
+.wp-activate footer{
+	display: none!important;
+}
+
+
+.wp-activate{
+	height: 100%;
+	.full-width div {
+    	height: 100%;
+	}
+	div#wrapper {
+    	height: 100%;
+	}
+	div#signup-content {
+    	height: 100%!Important;
+	}
+
+	input#submit {
+    	font-size: 1.3em;
+	}
 }
