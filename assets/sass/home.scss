@@ -329,7 +329,9 @@ input[type="submit"]:hover {
     justify-content: center;
     align-items: center;
     margin-top: 15%;
-    margin-left: 30px;
+
+        padding-left: 30px;
+    padding-right: 30px;
 }
 
 .wp-activate-container h2 {

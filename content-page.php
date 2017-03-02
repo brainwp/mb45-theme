@@ -20,5 +20,6 @@
 				'link_after'  => '</span>',
 			) );
 		?>
+
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
