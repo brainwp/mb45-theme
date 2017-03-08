@@ -1,4 +1,6 @@
 .single-product{
+
+
 	background-color: $cor-roxo;
 	.container{
 		margin-top: 130px;
@@ -101,7 +103,7 @@
 
 	.selectric {
 	    border: none!important;
-	    background: white!important;
+	    background: #F87B7D!important;
 	    padding-top: 4px;
 	    padding-bottom: 4px;
 	    margin-top: 9px;
@@ -137,6 +139,8 @@
 
 	span.label {
 	    font-size: 0.99em!important;
+	    font-weight: normal;
+    	color: white;
 	}
 
 }
