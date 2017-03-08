@@ -295,7 +295,43 @@ input[type="submit"]:hover {
 
 }
 
+.error404{
+	footer#footer {
+    	display: none;
+	}
+	background: #F87B7D !important;
 
+	form{
+		display: none;
+	}
+	main#content {
+		padding-left: 15px;
+	    padding-right: 15px;
+	    margin-right: 15px;
+	    margin-left: 15px;
+    	margin-top: 150px;
+
+	}
+
+	div.page-content {
+    	font-family: $familia-padrao;
+    	color: white;
+    	font-size: 1.3em;
+	}
+
+	main#content header h1 {
+	    font-family:$familia-padrao;
+	    color: white;
+	    text-transform: uppercase;
+	    font-weight: bold;
+	    letter-spacing: -5px;
+	    font-size: 7em;
+	    margin-left: -7px;
+	}
+	main#content header.page-header {
+    	margin-bottom: -17px;
+	}
+}
 
 @media all and (max-width: 1200px) {
 
@@ -303,6 +339,9 @@ input[type="submit"]:hover {
 }
 
 @media all and (max-width: 768px) {
+	.error404{
+		main#content header h1{ font-size: 3em; margin-left: 0px; }
+	}
 	.container-fluid .col-md-offset-1{
 		.theButtom {
 			display: none;
