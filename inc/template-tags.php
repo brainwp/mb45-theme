@@ -56,19 +56,31 @@ if ( ! function_exists( 'odin_posted_on' ) ) {
 	 * @since 2.2.0
 	 */
 	function odin_posted_on() {
-		if ( is_sticky() && is_home() && ! is_paged() ) {
-			echo '<span class="featured-post">' . __( 'Sticky', 'odin' ) . ' </span>';
-		}
-
 		// Set up and print post meta information.
-		printf( '<span class="entry-date">%s <time class="entry-date" datetime="%s">%s</time></span> <span class="byline">%s <span class="author vcard"><a class="url fn n" href="%s" rel="author">%s</a></span>.</span>',
+		echo '<div class="col-md-12 each-post-info">';
+		printf( '<span class="entry-date">%s <time class="entry-date" datetime="%s">%s</time></span></span>',
 			__( 'Posted in', 'odin' ),
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
-			__( 'by', 'odin' ),
-			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			get_the_author()
+			esc_html( get_the_date() )
 		);
+		echo '</div>';
+		if ( has_category() ) {
+			echo '<div class="col-md-12 each-post-info">';
+			printf( '<span class="post-categories">%s %s</span>',
+				__( 'Categories:', 'odin' ),
+				get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'odin' ) )
+			);
+			echo '</div>';
+		}
+		if ( has_tag() ) {
+			echo '<div class="col-md-12 each-post-info">';
+			printf( '<span class="post-categories">%s %s</span>',
+				__( 'Tags:', 'odin' ),
+				get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'odin' ), '', get_the_ID() )
+			);
+			echo '</div>';
+		}
+
 	}
 }
 

@@ -1,4 +1,4 @@
-body.blog, body.single-post{
+body.blog, body.single-post, body.archive {
 	article header h3 a {
 		font-size: 2em;
     	font-weight: bold;
@@ -21,6 +21,10 @@ body.blog, body.single-post{
 		}
 	}
 	article .entry-content.line {
+		font-family: $familia-padrao;
+	}
+	.each-post-info {
+		color: $cor-txt-post;
 		font-family: $familia-padrao;
 	}
 	#comments {

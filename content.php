@@ -22,6 +22,9 @@
 				</a>
 			</h3><!-- .entry-title -->
 		<?php endif;?>
+		<h5 class="post-informations">
+			<?php odin_posted_on();?>
+		</h5>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content line col-md-8 col-xs-10">
