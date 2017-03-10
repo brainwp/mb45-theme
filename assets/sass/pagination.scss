@@ -1,0 +1,12 @@
+.pagination-wrap {
+	margin-bottom: 40px;
+	.page-numbers {
+		border-radius: 0 !important;
+		font-family: $familia-padrao;
+		border:0 !important;
+		font-size:1.1em;
+	}
+	.page-numbers.current {
+		background: #F87B7D;
+	}
+}

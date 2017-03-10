@@ -1,0 +1,19 @@
+body.blog {
+	article header h3 a {
+		font-size: 2em;
+    	font-weight: bold;
+    	color: white;
+    	font-family: $familia-padrao;
+	}
+	article header {
+		@media screen and ( min-width: 768px ) {
+			width:70%;
+		}
+		@media screen and ( max-width: 768px ) {
+			width:90%;
+		}
+	}
+	article .entry-content.line {
+		font-family: $familia-padrao;
+	}
+}

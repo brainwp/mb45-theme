@@ -1,4 +1,4 @@
-.page{
+.page, body.blog {
 	background-color: #33135E;
 	margin: 0px;
 
@@ -15,7 +15,7 @@
     	color: white;
     	font-family: $familia-padrao;
 	}
-	.page{
+	.page, .post {
 		display: flex;
     	flex-flow: column;
     	justify-content: center;
