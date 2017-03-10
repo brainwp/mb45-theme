@@ -31,10 +31,12 @@ body.blog, body.single-post, body.archive {
 		text-align: left;
 		margin-top:20px;
 
-		textarea {
+		textarea, input[type="text"], input[type="email"], input[type="url"]{
 			box-shadow: none !important;
 			border-radius: 0;
 			border:0;
+			background: $cor-txt-post;
+			color: $cor-preto;
 		}
 		.form-submit input {
 			border-radius: 0;
