@@ -1,10 +1,17 @@
-body.blog {
+body.blog, body.single-post{
 	article header h3 a {
 		font-size: 2em;
     	font-weight: bold;
     	color: white;
     	font-family: $familia-padrao;
 	}
+	article header h1 a {
+		font-size: 1.1em;
+    	font-weight: bold;
+    	color: white;
+    	font-family: $familia-padrao;
+	}
+
 	article header {
 		@media screen and ( min-width: 768px ) {
 			width:70%;
@@ -15,5 +22,47 @@ body.blog {
 	}
 	article .entry-content.line {
 		font-family: $familia-padrao;
+	}
+	#comments {
+		text-align: left;
+		margin-top:20px;
+
+		textarea {
+			box-shadow: none !important;
+			border-radius: 0;
+			border:0;
+		}
+		.form-submit input {
+			border-radius: 0;
+			background: #F87B7D;
+			border: 0;
+			color: $cor-txt-post;
+			font-weight: bold;
+		}
+		.comment-body {
+			background: $cor-txt-post;
+			padding-left:10px;
+			padding-right:10px;
+			padding-bottom: 20px;
+			padding-top: 20px;
+			margin-top:20px;
+
+			* {
+				color: $cor-preto;
+			}
+			.media-heading {
+				display: inline;
+			}
+		}
+		.btn.btn-edit-link {
+			border-radius: 0;
+			background: #F87B7D;
+			border: 0;
+			color: $cor-txt-post;
+			font-weight: bold;
+			a {
+				color: $cor-txt-post !important;
+			}
+		}
 	}
 }
